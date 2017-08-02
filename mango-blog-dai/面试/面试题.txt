@@ -11,3 +11,4 @@
      内连接：满足两个表中的数据
      select * from A Left JOIN B ON A.Aid=B.Bnameid
 
+
