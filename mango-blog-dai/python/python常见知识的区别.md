@@ -252,3 +252,7 @@
 *	read读取整个文件
 *	readline读取下一行，使用生成器方法
 *	readlines读取整个文件到一个迭代器以供我们遍历
+
+###25.	如何在一个文件夹中创建多个app？
+*	先将创建好的app复制到指定的文件夹中，然后在settings.py中添加代码：
+*	sys.path.insert(0, os.path.join(BASE_DIR, 'app'))
