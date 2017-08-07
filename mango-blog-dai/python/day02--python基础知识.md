@@ -10,14 +10,14 @@
 ###空值
 　　空值是python里的一个特殊的值，用None表示。
 ###变量
-　　变量可以是任意数据类型，变量名必须是大小英文、数字、和_的组合，不能用数字开头。如：a = 100;<br>
-　　静态类型与动态类型：<br>
-　　　　静态类型需要在对应的变量前面指定对应的数据类型。<br>
+　　变量可以是任意数据类型，变量名必须是大小英文、数字、和_的组合，不能用数字开头。如：a = 100;
+　　静态类型与动态类型：
+　　　　静态类型需要在对应的变量前面指定对应的数据类型。
     `int a = 123;`
-    
+
 ##2. list与tuple
 ###list
-　　list是一种数据类型的列表，是一种有序的集合，可以随时的添加以删除其中的元素，如：<br>
+　　list是一种数据类型的列表，是一种有序的集合，可以随时的添加以删除其中的元素，如：
         classmates = ['dai','li','ming']　　#list集合<br>
     len(classmates)　　#list的长度<br>
     classmates.append('zhang')　　#在list最后添加元素<br>
@@ -30,27 +30,27 @@
 　　tuple是另外一种有序列表，也叫做元组。tuple和list非常相似，tuple一旦初始化了之后就不能修改，表示形式为：<br>
     classmates = ('dai','li','ming')<br>
     t = ('a', 'b', ['A', 'B'])<br>
-	t[2][0] = 'X'<br>
-	t[2][1] = 'Y'#t为('a', 'b', ['X', 'Y'])<br>
+    t[2][0] = 'X'<br>
+    t[2][1] = 'Y'#t为('a', 'b', ['X', 'Y'])<br>
 ###dict（字典）与set
-　　python内置了字典，其他语言称之为map，使用key-value存储：如：<br>
+　　python内置了字典，其他语言称之为map，使用key-value存储：如：
   `d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}`
-　　set和dict类似，也是一组key的集合，但是不能存储value。由于key不能重复，所以set中不能重复。如：<br>
+　　set和dict类似，也是一组key的集合，但是不能存储value。由于key不能重复，所以set中不能重复。如：
     s = set([1, 2, 3])
 
 ##函数
-　　函数的定义需要使用def语句，依次写出函数名、括号、括号中的参数以及冒号：,然后代码缩进块中编写函数体，函数的返回值使用return语句返回如下：<br>
+　　函数的定义需要使用def语句，依次写出函数名、括号、括号中的参数以及冒号：,然后代码缩进块中编写函数体，函数的返回值使用return语句返回如下：
     def my_abs(x):<br>
     　　if x >= 0:<br>
     　　　　return x<br>
     　　else:<br>
     　　　　return -x<br>
-　　空函数：定义一个空函数需要使用pass语句。<br>
-　　函数还可以返回多个值，如下所示：<br> 
+　　空函数：定义一个空函数需要使用pass语句。
+　　函数还可以返回多个值，如下所示：
 
     def move(x, y, step, angle=0):
     　　nx = x + step * math.cos(angle)
     　　ny = y - step * math.sin(angle)
     　　return nx, ny
-
+    
      x, y = move(100, 100, 60, math.pi / 6)

@@ -53,12 +53,12 @@
       　　　　　return response
       ```
 
-        
+
   ###4. Django如何实现多表的查询？
 
   * 查询小明的所有完整信息
 
-  *	AuthorDetail.objects.values('sex',....)
+    *AuthorDetail.objects.values('sex',....)
     * 查询活着这本书的作者以及出版社名字
     * Book.objects.filter(title='活着').value('author__name','publisher__name')
     * 查询小明写了什么书
@@ -128,7 +128,7 @@
       *  需要使两个字段保持唯一的时候使用
     * verbose_name
       * verbose_name就是给你的模型起一个更加可读的名字，一般定义为中文
-    *  verbose_name_plural
+    * verbose_name_plural
       * 这个选项值得是模型的复数形式
 
   ###8.Django是如何实现用户拦截的？
@@ -192,8 +192,8 @@
   ###12.如何限制HTTP的请求方法
 * @require_http_methods(["GET", "POST"])<br>
 
-  	def my_view(request):<br>
-  	　　pass<br>
+   def my_view(request):<br>
+   	　　pass<br>
 
 * require_GET()    只允许视图接受GET方法的装饰器。
 * require_POST() 只允许视图接受POST方法的装饰器。
@@ -210,7 +210,7 @@
 * 如果用户已经登陆了，则正常执行视图，视图的代码可以安全地假设用户已经登陆了。
 
   ###15.permission_required 装饰器的作用？
-  *用于检查一个用户是否有指定的权限
+  * 用于检查一个用户是否有指定的权限
 
   ###16.怎样重写用户模型？
 * Django中内置的User模型不可能适合所有的项目，可以通过AUTH_USER_MODEL设置覆盖默认的User模型，其值引用一个定义的模型。
@@ -226,16 +226,13 @@
 
   *	REQUIRES_FIELDS   列出必须的字段
 
-  *	is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
+    * is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
+    * get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
+    * get_short_name()	一个短的并且正式的用户标识符。
+    * 自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
 
-  *	get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
-
-  *	get_short_name()	一个短的并且正式的用户标识符。
-
-  *	自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
-
-    *create_user(*username,password=None,**other_fields)
-    *create_superuser(*username,password,**other_fields)
+  *create_user(*username,password=None,**other_fields)
+  *create_superuser(*username,password,**other_fields)
 
   *	其中create_user()和create_superuser()不同，其中create_superuser()必须要求调用方提供密码
 
@@ -284,7 +281,8 @@ AUTHENTICATION_BACKENDS= (
 ###22.	Python垃圾回收机制
 * Python GC主要使用引用计数来跟踪和回收垃圾。在引用计数的基础上，通过“标记-清除”解决容器对象可能产生的循环引用问题，通过“分代回收”以空间换时间的方法提高垃圾回收效率。
 
-*	引用计数法
+  * 引用计数法
+
   *	PyObject是每个对象必有的内容，其中ob_refcnt就是为引用计数。当一个对象有新的引用的时候，它的ob_refcnt就会增加，当引用它的对象被删除的时候，它的ob_refcnt就会减少。当obj_refcnt为0的时候，该对象的生命就结束了。
     * 优点：
       * 简单
@@ -292,11 +290,11 @@ AUTHENTICATION_BACKENDS= (
     * 缺点
       * 维护引用计数消耗资源
       * 循环引用
-*	标记-清除机制
-  * 基本思路就是先按需分配，等到没有空闲的时候从寄存器和程序栈上引用出发，遍历以对象为节点、以引用为边构成图，把所有可以访问的对象上打上标记，然后清扫一遍内存空间，把没有标记的对象释放。
-*	分代技术
-  * 分代回收的整体思想是：将系统中的所有内存块根据其存活的时间划分为不同的集合，每个集合就成为一个“代”。垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
-  * Python默认定义了三代对象集合，索引数越大，对象存活时间越长。
+        *标记-清除机制
+  *	基本思路就是先按需分配，等到没有空闲的时候从寄存器和程序栈上引用出发，遍历以对象为节点、以引用为边构成图，把所有可以访问的对象上打上标记，然后清扫一遍内存空间，把没有标记的对象释放。
+    *分代技术
+  *	分代回收的整体思想是：将系统中的所有内存块根据其存活的时间划分为不同的集合，每个集合就成为一个“代”。垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
+  *	Python默认定义了三代对象集合，索引数越大，对象存活时间越长。
 
 ###23.    python中的is与==？
 * python中的is是对比地址，==是对比值
