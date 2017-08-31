@@ -34,3 +34,11 @@
 
 * 先使用git log查看commit日志，提交的commit的哈希值
 * 使用命令  git reset --hard commit_id  进行回退
+
+### 5. git缓存当前工作
+
+* `git stash` 可以用来缓存当前正在进行的工作，比如想pull最新代码的时候，又不想加新的commit，这时候就可以缓存当前工作。
+* `git stash`
+* `do some work`
+* `git stash pop`
+* 当你多次使用git stash的时候， 你可以使用`git stash list`打印当前git栈信息，找到对应的版本号就可以了，`git stash apply stash@{1}`
