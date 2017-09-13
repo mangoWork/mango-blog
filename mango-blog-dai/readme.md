@@ -26,7 +26,7 @@
 * 目录结构
   * git
     * git常遇到的问题
-      * [detachedHEAD(git 处于游离状态)](./collaborationTools/git/git常遇到的问题/detachedHEAD(git 处于游离状态).md)
+      * [detachedHEAD(git 处于游离状态)](./collaborationTools/git/git常遇到的问题/detachedHEAD(git处于游离状态).md)
     * git命令
       * [git基础命令](./collaborationTools/git/git命令/git基础命令.md)
     * [git基本知识（非命令）](./collaborationTools/git/git基本知识(非命令).md)
@@ -77,11 +77,11 @@
     * Disruptor
       * [Disruptor](./java/并发/Disruptor/Disruptor.md)
   * 线程
-    * [线程相关基本概念](./java/线程/1. 线程相关基本概念.md)
-    * [多线程队列](./java/线程/2. 多线程队列.md)
-    * [多线程常用模式](./java/线程/3 多线程常用模式.md)
-    * [Executor框架以及线程池](./java/线程/4 Executor框架以及线程池.md)
-    * [线程锁](./java/线程/5 线程锁.md)
+    * [线程相关基本概念](./java/线程/1.线程相关基本概念.md)
+    * [多线程队列](./java/线程/2.多线程队列.md)
+    * [多线程常用模式](./java/线程/3多线程常用模式.md)
+    * [Executor框架以及线程池](./java/线程/4.Executor框架以及线程池.md)
+    * [线程锁](./java/线程/5.线程锁.md)
     * [线程通信.md](./java/线程/线程通信.md)
   * [集合](./java/集合.md)
 
@@ -90,14 +90,14 @@
 * 目录结构
   * 基础问题
     * 编码问题
-      * [解决参数传递参数的乱码的问题](./java web/基础问题/编码问题/解决参数传递参数的乱码的问题.md)
+      * [解决参数传递参数的乱码的问题](./javaWeb/基础问题/编码问题/解决参数传递参数的乱码的问题.md)
 
 ## network
 
 * 目录结构
   * 图解TCP IP
-    * [第一章 计算机网络基础.md](./network/图解TCP IP/第一章 计算机网络基础.md)
-    * [第二章  TCP IP基础知识.md](./network/图解TCP IP/第二章  TCP IP基础知识.md)
+    * [第一章 计算机网络基础.md](./network/图解TCPIP/第一章-计算机网络基础.md)
+    * [第二章  TCP IP基础知识.md](./network/图解TCPIP/第二章-TCP IP基础知识.md)
 
 ## os
 
@@ -131,9 +131,9 @@
     * [angular基础](./web/angular/angular基础.md)
     * [angular学习阶段常见问题](./web/angular/angular学习阶段常见问题.md)
   * es6
-    * [1. es6的简介](./web/es6/1. es6的简介.md)
-    * [2. let和const命令](./web/es6/2. let和const命令.md)
-    * [3. 变量的解构赋值](./web/es6/3. 变量的解构赋值.md)
+    * [es6的简介](./web/es6/1.es6的简介.md)
+    * [let和const命令](./web/es6/2.let和const命令.md)
+    * [变量的解构赋值](./web/es6/3.变量的解构赋值.md)
   * vue
     * [vue错误解决](./web/vue/vue错误解决.md)
     * [vue学习](./web/vue/vue学习.md)

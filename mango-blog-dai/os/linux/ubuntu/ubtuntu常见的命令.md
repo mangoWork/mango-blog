@@ -1,13 +1,13 @@
-##Ubuntu常见的命令
-###1.	第一次使用root设置密码
+## Ubuntu常见的命令
+### 1.	第一次使用root设置密码
 *	sudo passwd root
 
-###2.ssh的安装
+### 2.ssh的安装
 * sudo apt-get install  openssh-server
 
 * 重启ssh命令：
 
-*  sudo /etc/init.d/ssh resart
+* sudo /etc/init.d/ssh resart
 
   * 查看ssh是否启动
 
@@ -16,7 +16,7 @@
   * ssh命令
   * ssh-keygen -t rsa
 
-###3.设置静态IP
+### 3.设置静态IP
 * 在对应的/etc/network/interfaces中添加如下代码
 
 ```
@@ -31,9 +31,9 @@
 
 * 最后重启网卡
 
-*	sudo /etc/init.d/network restart
+  *sudo /etc/init.d/network restart
 
-###4.端口号查询的相关命令
+### 4.端口号查询的相关命令
 * netstat -a  查看已经连接的服务端口
 * netstat -ap查看所有的端口
 * netstat -ap|grep 8080

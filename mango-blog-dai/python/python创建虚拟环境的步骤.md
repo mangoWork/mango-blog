@@ -38,7 +38,7 @@ deactivate
 
 
 
-##戴礼明创建
+## 戴礼明创建
 
 在创建好了虚拟环境之后需要安装对应的开发中的包，利用虚拟环境中自带的pip命令：
 pip install -U -r requirements/DEVELOPMENT

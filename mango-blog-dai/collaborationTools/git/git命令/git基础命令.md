@@ -1,9 +1,9 @@
-##git中常用的命令
-###1. 分支
+## git中常用的命令
+### 1. 分支
 *		查看远程分支   git branch -a
   *	查看本地分支	  git branch
 
-###2. git pull  origin 与git fetch的区别？
+### 2. git pull  origin 与git fetch的区别？
 * git pull 相当于从远程获取最新版本并且merge到本地
 
   * git pull origin master（相当于git fetch和git merge)
