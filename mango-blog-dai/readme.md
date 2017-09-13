@@ -97,7 +97,7 @@
 * 目录结构
   * 图解TCP IP
     * [第一章 计算机网络基础.md](./network/图解TCPIP/第一章-计算机网络基础.md)
-    * [第二章  TCP IP基础知识.md](./network/图解TCPIP/第二章-TCP IP基础知识.md)
+    * [第二章  TCP IP基础知识.md](./network/图解TCPIP/第二章-TCPIP基础知识.md)
 
 ## os
 
