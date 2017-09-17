@@ -10,8 +10,8 @@
 
 
   * git fetch 相当于是从远程获取最新到本地，不会自动merge
-  * git fetch origin
-  * git merge origin/master
+      * git fetch origin
+      * git merge origin/master
   * git fetch操作包含了两个关键的步骤：
   * 创建并且更新所有的远程分支的本地分支
   * 设置当前分支的FETCH_HEAD为远程服务器的分支
@@ -42,3 +42,26 @@
 * `do some work`
 * `git stash pop`
 * 当你多次使用git stash的时候， 你可以使用`git stash list`打印当前git栈信息，找到对应的版本号就可以了，`git stash apply stash@{1}`
+
+### 6. git合并commit
+
+* 可以使用git rebase -i  commitid  以及使用git commit --fixup commitid
+
+* git commit --fixup:
+
+  * 提交
+
+    ```shell
+    git commit --fixup 54321
+    ```
+
+  * 开发工作完成后，待推送/评审的提交中出现大量的包含“fixup!”前缀的提交该如何处理呢？
+
+    如果你执行过一次下面的命令，即针对错误提交 54321 及其后面所有提交执行交互式变基（注意其中的 `--autosquash` 参数），你就会惊叹 Git 设计的是这么巧妙：
+
+    ```shell
+    git rebase -i --autosquash 54321^
+    ```
+
+    ​
+
