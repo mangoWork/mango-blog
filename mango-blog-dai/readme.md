@@ -14,12 +14,14 @@
 * python：python基础 
 * regularExpressions：正则表达式
 * web：前端
+* 常用词语解释：[常用词语解释](./常用词语解释.md)
 
 ##  architect
 
 * 目录结构
   * 分布式java应用
     * [分布式java应用基础与实践](./architect/分布式java应用/分布式Java应用基础与实践.md )
+  * [分布式中常遇到的基本概念](./architect/分布式中常遇到的基本概念.md)
 
 ## collaborationTools 
 
