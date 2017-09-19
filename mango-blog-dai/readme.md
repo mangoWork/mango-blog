@@ -65,6 +65,7 @@
   * [python面试](./interview/python面试.md)
   * [数据库](./interview/数据库.md)
   * [算法](./interview/算法.md)
+  * [操作系统](./interview/操作系统.md)
 
 ## java
 
