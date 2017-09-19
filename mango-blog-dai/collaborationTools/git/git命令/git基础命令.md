@@ -65,3 +65,34 @@
 
     ​
 
+
+### 7. 撤销对某一个文件的修改
+
+* 场景：修改了a、b文件为列，假设需要撤销文件a的修改，则修改后的两个文件：
+* 如果没有被git add到索引区
+  * **git checkout a**便可以撤销对文件的修改
+* 如果被git add到索引区，但没有做git commit提交
+  * 使用git reset将a从索引区移除（但是会保留在工作区）
+    * git reset HEAD a
+  * 撤销工作区文件a的修改
+    * git  checkout a
+* 如果被提交了，则需要先回退当前提交到工作区，然后撤销文件a的修改
+  * 回退当前提交到工作区
+    * git reset HEAD^
+  * 撤销工作区中文件a的修改
+    * git checkout a
+
+### 8. git回退版本，删除commit
+
+* `git reset`有三种命令方式：分别为:
+  * `git reset --mixed`: 此为默认方式，不带任何参数，即使用这种方式，它回退对应的commit和index（索引）中的信息
+  * `git reset --soft`:回退某个版本，只回退commit信息，不会回退索引(index)，如果还需要提交，则直接commit即可。
+  * `git reset --hard`:彻底回退到某个版本，本地源码也会变为上一个版本的内容。
+* 相应的示列：
+  * git reset HEAD^    回退所有内容到上一个版本
+  * git reset HEAD^ a.py   回退a.py这个文件的版本到上一个版本  
+  * git reset –-soft HEAD~3   向前回退到第3个版本  
+  * git reset –-hard origin/master   将本地的状态回退到和远程的一样  
+  * it reset 057d   回退到某个版本  
+  * git revert HEAD   回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit  
+
