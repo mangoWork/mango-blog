@@ -73,9 +73,6 @@
 ## switch能否作用在byte,long上? 
 可以用在byte上,但是不能用在long上.
 
-## String s1="ab",String s2="a"+"b",String s3="a",String s4="b",s5=s3+s4请问s5==s2返回什么?
- 返回false.在编译过程中,编译器会将s2直接优化为"ab",会将其放置在常量池当中,s5则是被创建在堆区,相当于s5=new String("ab");
-
 ## String对象
 
 ### 你对String对象的intern()熟悉么?
@@ -109,6 +106,52 @@
   * 使用只包含常量的字符串连接符如"aa" + "aa"创建的也是常量,编译期就能确定,已经确定存储到String Pool中；
   * 使用包含变量的字符串连接符如"aa" + s1创建的对象是运行期才创建的,存储在heap中；
 
+
+###  使用String不一定创建对象
+
+* 在执行到双引号包含字符串的时候，如String a = “we”，JVM会先到常量池中查找，如果有的话，返回常量池的这个实例中的引用，否则的话创建一个新实例并放在常量池中。
+
+### 使用new String一定创建对象
+
+* 在执行String a = new String("123")的时候，首先走常量池中取得一个实例的引用，然后在堆上面创建一个新的String实例，走以下构造函数给value属性赋值，然后把实例引用赋值给a。
+
+### 关于String.intern()
+
+* intern方法使用：一个初始为空的字符串，它由类String独自维护。当调用intern方法时，如果常量池中已经包含了等于此对象的字符串，则返回池中的字符串。否则，将此String对象添加到池中，并返回此String对象的引用。
+* 它遵循以下规则：对于任意两个字符串 s 和 t，当且仅当 **s.equals(t)** 为 true 时，s.intern() == t.intern() 才为 true。
+
+### 关于equals和==
+
+* 对于==，如果作用于基本数据类型的变量，则比较其存储的“值”是否想等；如果作用域引用变量，则比较的是所指向的对象地址（是否指向同一地址）
+* equals方法是基类Object中的方法，因此对于所有的继承于Object的类都会有该方法。在Object类中，equals方法是用来比较两个对象的引用是否相等，即是否指向同一个对象。
+* 对于equals方法，注意：equals方法不能作用于基本数据类型的变量。如果没有对equals方法进行重写，则比较的是引用类型的变量所指向的对象的地址；而String类对equals方法进行了重写，用来比较指向的字符串对象所存储的字符串是否相等。其他的一些类诸如Double，Date，Integer等，都对equals方法进行了重写用来比较指向的对象所存储的内容是否相等。
+
+### String中的+
+
+* String中使用 + 字符串连接符进行字符串连接时，连接操作最开始时如果都是字符串常量，编译后将尽可能多的直接将字符串常量连接起来，形成新的字符串常量参与后续连接（通过反编译工具jd-gui也可以方便的直接看出）；
+
+* 接下来的字符串连接是从左向右依次进行，对于不同的字符串，首先以最左边的字符串为参数创建StringBuilder对象，然后依次对右边进行append操作，最后将StringBuilder对象通过toString()方法转换成String对象（注意：中间的多个字符串常量不会自动拼接）。
+
+  也就是说**String c = "xx" + "yy " + a + "zz" + "mm" + b; 实质上的实现过程是： String c = new StringBuilder("xxyy").append(a).append("zz").append("mm").append(b).toString();**
+
+### String、StringBuffer、StringBuilder
+
+* 可变与不可变：String是**不可变字符串对象**，StringBuilder和StringBuffer是**可变字符串对象**（其内部的字符数组长度可变）。
+* 是否多线程安全：String中的对象是不可变的，也就可以理解为常量，显然**线程安全**。StringBuffer 与 StringBuilder 中的方法和功能完全是等价的，只是StringBuffer 中的方法大都采用了synchronized 关键字进行修饰，因此是**线程安全**的，而 StringBuilder 没有这个修饰，可以被认为是**非线程安全**的。
+* String、StringBuilder、StringBuffer三者的执行效率：
+  StringBuilder > StringBuffer > String 当然这个是相对的，不一定在所有情况下都是这样。比如String str = "hello"+ "world"的效率就比 StringBuilder st  = new StringBuilder().append("hello").append("world")要高。因此，这三个类是各有利弊，应当根据不同的情况来进行选择使用：
+  * 当字符串相加操作或者改动较少的情况下，建议使用 String str="hello"这种形式；
+  * 当字符串相加操作较多的情况下，建议使用StringBuilder，如果采用了多线程，则使用StringBuffer。
+
+### **关于String str = new String("abc")创建了多少个对象？**
+
+* 在**类加载的过程**中，确实在运行时常量池中创建了一个"abc"对象，而在**代码执行过程中**确实只创建了一个String对象。
+
+### String s1="ab",String s2="a"+"b",String s3="a",String s4="b",s5=s3+s4请问s5==s2返回什么?
+
+ 返回false.在编译过程中,编译器会将s2直接优化为"ab",会将其放置在常量池当中,s5则是被创建在堆区,相当于s5=new String("ab");
+
+----------
 
 
 ## Object中有哪些公共方法?
