@@ -96,3 +96,16 @@
   * it reset 057d   回退到某个版本  
   * git revert HEAD   回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit  
 
+
+### 9. git向多个远程仓库push？
+
+* 向本地git仓库添加对应的远程仓库地址，并且为远程地址命名
+
+  ```shell
+  git remote add gitee  git@gitee.com:daiqiaobing/mango-blog.git
+  git remote add origin  git@gitee.com:daiqiaobing/mango-blog.git
+  git push origin dlm
+  git push gitee dlm
+  ```
+
+  ​
