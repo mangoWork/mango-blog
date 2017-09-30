@@ -195,6 +195,9 @@
 
 ### 5.2 Selectors
 
+* Selector选择器类管理着一个被注册的通道集合的信息和他们的就绪状态。通道和选择器一起被注册，并且使用选择器来更新通道的就绪状态。当这么做的时候，可以选择将被激发的线程挂起，直到有就绪的状态。
+
+
 * 其中异步I/O的核心对象是Selector。
 
   ```java
@@ -202,6 +205,8 @@
   ```
 
 * 之后在对不同的通道对象调用register()方法。以便注册我们对这些对象中发生的I/O事件的兴趣。register()的第一个参数是Selector。
+
+  ![](../../../../img/dai/java/selectorRegister.png)
 
 ### 5.3 打开一个ServerSocketChannel
 
