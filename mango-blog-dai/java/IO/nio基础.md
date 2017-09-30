@@ -206,7 +206,7 @@
 
 * 之后在对不同的通道对象调用register()方法。以便注册我们对这些对象中发生的I/O事件的兴趣。register()的第一个参数是Selector。
 
-  ![](../../../../img/dai/java/selectorRegister.png)
+  ![](../../../img/dai/java/selectorRegister.png)
 
 ### 5.3 打开一个ServerSocketChannel
 

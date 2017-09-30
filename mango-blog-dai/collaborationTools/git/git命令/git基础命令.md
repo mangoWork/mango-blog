@@ -108,4 +108,11 @@
   git push gitee dlm
   ```
 
-  ​
+### 10. git修改commit中的提交说明
+
+```shell
+git commit --amend
+```
+
+
+
