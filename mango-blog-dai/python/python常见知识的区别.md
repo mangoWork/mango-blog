@@ -58,7 +58,9 @@
 
   * 查询小明的所有完整信息
 
-    *AuthorDetail.objects.values('sex',....)
+    * AuthorDetail.objects.values('sex',....)
+
+
     * 查询活着这本书的作者以及出版社名字
     * Book.objects.filter(title='活着').value('author__name','publisher__name')
     * 查询小明写了什么书
@@ -189,7 +191,8 @@
 * handler403 = 'mysite.views.my_custom_permission_denied_view'
 * handler400 = 'mysite.views.my_custom_bad_request_view'
 
-  ### 12.如何限制HTTP的请求方法
+### 12.如何限制HTTP的请求方法
+
 * @require_http_methods(["GET", "POST"])<br>
 
    def my_view(request):<br>
@@ -199,20 +202,23 @@
 * require_POST() 只允许视图接受POST方法的装饰器。
 * equire_safe() 只允许视图接受 GET 和 HEAD 方法的装饰器。 这些方法通常被认为是安全的，因为方法不该有请求资源以外的目的
 
-  ### 13.在session中添加用户信息以及退出一个用户
+### 13.在session中添加用户信息以及退出一个用户
+
 * 需要先调用authenticate(),当成功的认证该用户的时候，之后才会调用login()
 * 通过logout(request)退出用户
 
-  ### 14.如何实现只允许登录的用户访问？
+### 14.如何实现只允许登录的用户访问？
+
 * 可以通过代码：request.user.is_authenticated()是否登陆
 * 也可以通过login_required 装饰器
   * 如果用户没有登陆，则会从定向到settings.LOGIN_URL,并将当前的访问路径传递到查询字符串中。
 * 如果用户已经登陆了，则正常执行视图，视图的代码可以安全地假设用户已经登陆了。
 
-  ### 15.permission_required 装饰器的作用？
-  * 用于检查一个用户是否有指定的权限
+### 15.permission_required 装饰器的作用？
+* 用于检查一个用户是否有指定的权限
 
-  ### 16.怎样重写用户模型？
+### 16.怎样重写用户模型？
+
 * Django中内置的User模型不可能适合所有的项目，可以通过AUTH_USER_MODEL设置覆盖默认的User模型，其值引用一个定义的模型。
 
 * AUTH_USER_MODEL = 'myapp.MyUser'
@@ -222,14 +228,14 @@
     * 模型必须要有一个唯一的字段可被用于识别目的。
   * 创建一个规范的自定义模型的最简单的方法是继承AbstractBaseUser。AbstractBaseUser提供User模型的核心实现，包括散列密码和令牌化密码重置。必须提供一些关键的实施细节：
 
-  *  USERNAME_FIELD   描述User模型上用作唯一标识符的字段名称的字符串，字段必须是唯一的。
+  * USERNAME_FIELD   描述User模型上用作唯一标识符的字段名称的字符串，字段必须是唯一的。
 
   *	REQUIRES_FIELDS   列出必须的字段
 
-  *	is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
-  *	get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
-    * get_short_name()一个短的并且正式的用户标识符。
-  *	自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
+    * is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
+    * get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
+  *	get_short_name()一个短的并且正式的用户标识符。
+    * 自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
 
   *create_user(*username,password=None,**other_fields)
   *create_superuser(*username,password,**other_fields)
@@ -239,7 +245,8 @@
   ### 17.用户定义以及权限
 * 为了将Django的权限框架包含在自己的User类中，Django提供了PermissionsMixin。提供支持Django权限模型所需要的所有方法和数据库的字段。
 
-  ### 18.用户认证自定义（一般用于自己重写user之后）
+### 18.用户认证自定义（一般用于自己重写user之后）
+
 * 在stting.py中设置：
 
 ```python
@@ -283,18 +290,20 @@ AUTHENTICATION_BACKENDS= (
 
   * 引用计数法
 
-    *PyObject是每个对象必有的内容，其中ob_refcnt就是为引用计数。当一个对象有新的引用的时候，它的ob_refcnt就会增加，当引用它的对象被删除的时候，它的ob_refcnt就会减少。当obj_refcnt为0的时候，该对象的生命就结束了。
+    * PyObject是每个对象必有的内容，其中ob_refcnt就是为引用计数。当一个对象有新的引用的时候，它的ob_refcnt就会增加，当引用它的对象被删除的时候，它的ob_refcnt就会减少。当obj_refcnt为0的时候，该对象的生命就结束了。
+
+
     * 优点：
       * 简单
       * 实时性
     * 缺点
       * 维护引用计数消耗资源
       * 循环引用
-        *标记-清除机制
-        *基本思路就是先按需分配，等到没有空闲的时候从寄存器和程序栈上引用出发，遍历以对象为节点、以引用为边构成图，把所有可以访问的对象上打上标记，然后清扫一遍内存空间，把没有标记的对象释放。
-        *分代技术
-        *分代回收的整体思想是：将系统中的所有内存块根据其存活的时间划分为不同的集合，每个集合就成为一个“代”。垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
-        *Python默认定义了三代对象集合，索引数越大，对象存活时间越长。
+    * 标记-清除机制
+      * 基本思路就是先按需分配，等到没有空闲的时候从寄存器和程序栈上引用出发，遍历以对象为节点、以引用为边构成图，把所有可以访问的对象上打上标记，然后清扫一遍内存空间，把没有标记的对象释放。
+    * 分代技术
+      * 分代回收的整体思想是：将系统中的所有内存块根据其存活的时间划分为不同的集合，每个集合就成为一个“代”。垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
+      * Python默认定义了三代对象集合，索引数越大，对象存活时间越长。
 
 ### 23.    python中的is与==？
 * python中的is是对比地址，==是对比值
