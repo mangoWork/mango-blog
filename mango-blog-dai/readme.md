@@ -58,7 +58,9 @@
 
 * 目录结构
   * 面试计划
-  * [javaEE面试](./interview/javaEE面试.md)
+  * 1年
+    * [项目经验](./interview/1年/experence.md)
+  * [javaEE面试](./interview/javaEE.md)
   * [java基础](./interview/java基础.md)
   * [java面试](./interview/java面试.md)
   * [js面试](./interview/js面试.md)
@@ -66,6 +68,7 @@
   * [数据库](./interview/数据库.md)
   * [算法](./interview/算法.md)
   * [操作系统](./interview/操作系统.md)
+  * ​
 
 ## java
 
@@ -119,6 +122,9 @@
 * 目录结构
   * django
     * [Django在配置文件中拦截用户请求](./python/django/django在配置文件中拦截用户请求.md)
+  * python运维
+    * [ansible模块介绍](./python/python运维/ansible模块介绍.md)
+    * [python运维基础模块介绍](./python/python运维/python运维基础模块介绍.md)
   * [python基础知识](./python/1.python基础知识.md)
   * [python基础语法](./python/2.python基础语法.md)
   * [python常见知识的区别](./python/python常见知识的区别.md)
