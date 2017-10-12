@@ -24,13 +24,15 @@
 
     * 需要在setting.py中配置（或者在对应的项目的配置文件配置），配置的是
 
-      ``MIDDLEWARE_CLASSES:``
+      ```python
+      - MIDDLEWARE_CLASSES:
+      MIDDLEWARE_CLASSES = [
+      'django.middleware.security.SecurityMiddleware',
+      'django.middleware.common.CommonMiddleware',
+      'django.middleware.csrf.CsrfViewMiddleware', 
+      ]
+      ```
 
-    `MIDDLEWARE_CLASSES = [`
-    `'django.middleware.security.SecurityMiddleware',`
-    `'django.middleware.common.CommonMiddleware',`
-     'django.middleware.csrf.CsrfViewMiddleware', 
-      ]``
 
     * 中间件的执行顺序？
     * 我们从浏览器发出一个请求（Request）之后，得到一个响应的内容(HttpResponse),这个过程如下所示：
@@ -45,10 +47,8 @@
 
     * ```python
       class CommonMiddleware(object):
-
        　　　def process_request(self, request):
       　　　　　return None
-
       　　　def process_response(self, request, response):
       　　　　　return response
       ```
@@ -232,10 +232,10 @@
 
   *	REQUIRES_FIELDS   列出必须的字段
 
-    * is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
-    * get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
+  *	is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
+  *	get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
   *	get_short_name()一个短的并且正式的用户标识符。
-    * 自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
+  *	自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
 
   *create_user(*username,password=None,**other_fields)
   *create_superuser(*username,password,**other_fields)
