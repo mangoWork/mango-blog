@@ -1,6 +1,32 @@
 # IT的学习笔记目录结构
 
-[TOC]
+[基础](#基础)
+
+[architect：架构](architect：架构)
+
+[Book：书单](#Book：书单)
+
+[collaborationTools: 协作工具](#collaborationTools: 协作工具)
+
+[database：数据库](#database：数据库)
+
+[docker：docker容器](#docker：docker容器)
+
+[interview：面试](#interview：面试)
+
+[java： java基础](#java： java基础)
+
+[Java web：java web](#Java web：java web)
+
+[network：计算机网络](#network：计算机网络)
+
+[os：操作系统](#os：操作系统)
+
+[python：python基础 ](#python：python基础 )
+
+[regularExpressions：正则表达式](#regularExpressions：正则表达式)
+
+[web：前端](#web：前端)
 
 ## 基础
 
