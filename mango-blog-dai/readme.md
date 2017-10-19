@@ -4,9 +4,9 @@
 
 [architect：架构](#architect)
 
-[Book：书单](#Book)
+[Book：书单](#book)
 
-[collaborationTools: 协作工具](#collaborationTools)
+[collaborationTools: 协作工具](#collaborationtools)
 
 [database：数据库](#database)
 
@@ -16,7 +16,7 @@
 
 [java： java基础](#java)
 
-[Java web：java web](#Java web)
+[Java web：java web](#javaweb)
 
 [network：计算机网络](#network)
 
@@ -24,7 +24,7 @@
 
 [python：python基础 ](#python)
 
-[regularExpressions：正则表达式](#regularExpressions)
+[regularExpressions：正则表达式](#regularexpressions)
 
 [web：前端](#web)
 
@@ -40,12 +40,12 @@
     * [分布式java应用基础与实践](./architect/分布式java应用/分布式Java应用基础与实践.md )
   * [分布式中常遇到的基本概念](./architect/分布式中常遇到的基本概念.md)
 
-## Book
+## book
 
 - IT书单：[IT书单计划](./book/IT书单.md)
 - 非IT书单：[非IT书单](./book/非IT书单.md)
 
-## collaborationTools 
+## collaborationtools 
 
 * 目录结构
   * git
@@ -113,7 +113,7 @@
     * [线程通信.md](./java/线程/线程通信.md)
   * [集合](./java/集合.md)
 
-## Java web
+## javaweb
 
 * 目录结构
   * 基础问题
@@ -152,7 +152,7 @@
   * [python常见知识的区别](./python/python常见知识的区别.md)
   * [python创建虚拟环境的步骤](./python/python创建虚拟环境的步骤.md)
 
-## regularExpressions
+## regularexpressions
 
 * 目录结构
   * [正则表达式基础](./regularExpressions/正则表达式基础.md)
