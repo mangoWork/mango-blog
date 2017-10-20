@@ -30,14 +30,14 @@
 
 ## 基础
 
-* 常用词语解释：[常用词语解释](./常用词语解释.md)
-* 计算语言中的基本概念与区别：[计算语言中的基本概念与区别](./计算语言中的基本概念与区别.md)
+* 常用词语解释：[常用词语解释](./common-word-interpretation.md)
+* 计算语言中的基本概念与区别：[计算语言中的基本概念与区别](./differences-IT-language.md)
 
 ##  architect
 
 * 目录结构
-  * 分布式java应用
-    * [分布式java应用基础与实践](./architect/分布式java应用/分布式Java应用基础与实践.md )
+  * 分布式java应用()
+    * [分布式java应用基础与实践](./architect/Distributed-Java-applications/practice-distributed-Java-application.md )
   * [分布式中常遇到的基本概念](./architect/分布式中常遇到的基本概念.md)
 
 ## book
@@ -50,10 +50,10 @@
 * 目录结构
   * git
     * git常遇到的问题
-      * [detachedHEAD(git 处于游离状态)](./collaborationTools/git/git常遇到的问题/detachedHEAD(git处于游离状态).md)
+      * [detachedHEAD(git 处于游离状态)](./collaborationTools/git/git常遇到的问题/git处于游离状态.md)
     * git命令
       * [git基础命令](./collaborationTools/git/git命令/git基础命令.md)
-    * [git基本知识（非命令）](./collaborationTools/git/git基本知识(非命令).md)
+    * [git基本知识（非命令）](./collaborationTools/git/git基本知识非命令.md)
   * [介绍](./collaborationTools/README.md)
   * [加快开发速度的工具](./collaborationTools/加快开发速度的工具.md)
 
@@ -82,7 +82,7 @@
   * 面试计划
   * 1年
     * [项目经验](./interview/1年/experence.md)
-  * [javaEE面试](./interview/javaEE.md)
+  * [javaEE面试](./interview/javaweb.md)
   * [java基础](./interview/java基础.md)
   * [java面试](./interview/java面试.md)
   * [js面试](./interview/js面试.md)
