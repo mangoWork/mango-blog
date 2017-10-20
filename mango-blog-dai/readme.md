@@ -30,20 +30,20 @@
 
 ## 基础
 
-* 常用词语解释：[常用词语解释](./common-word-interpretation.md)
-* 计算语言中的基本概念与区别：[计算语言中的基本概念与区别](./differences-IT-language.md)
+* 常用词语解释：[常用词语解释](./常用词语解释.md)
+* 计算语言中的基本概念与区别：[计算语言中的基本概念与区别](./计算语言中的基本概念与区别.md)
 
 ##  architect
 
 * 目录结构
-  * 分布式java应用()
-    * [分布式java应用基础与实践](./architect/Distributed-Java-applications/practice-distributed-Java-application.md )
+  * 分布式java应用(Distributed-Java-applications)
+    * [分布式java应用基础与实践](./architect/Distributed-Java-applications/分布式java应用基础与实践.md )
   * [分布式中常遇到的基本概念](./architect/分布式中常遇到的基本概念.md)
 
 ## book
 
-- IT书单：[IT书单计划](./book/IT书单.md)
-- 非IT书单：[非IT书单](./book/非IT书单.md)
+- IT书单：[IT书单计划](./book/IT-book.md)
+- 非IT书单：[非IT书单](./book/not-IT-book.md)
 
 ## collaborationtools 
 
