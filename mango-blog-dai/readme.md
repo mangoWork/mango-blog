@@ -28,6 +28,8 @@
 
 [web：前端](#web)
 
+[other:其他](#other)
+
 ## 基础
 
 * 常用词语解释：[常用词语解释](./常用词语解释.md)
@@ -144,6 +146,7 @@
 * 目录结构
   * django
     * [Django在配置文件中拦截用户请求](./python/django/django在配置文件中拦截用户请求.md)
+    * [Django用户拦截、自定义用户、项目创建、虚拟环境创建](./python/django/django项目创建.md)
   * python运维
     * [ansible模块介绍](./python/python运维/ansible模块介绍.md)
     * [python运维基础模块介绍](./python/python运维/python运维基础模块介绍.md)
@@ -170,3 +173,7 @@
   * vue
     * [vue错误解决](./web/vue/vue错误解决.md)
     * [vue学习](./web/vue/vue学习.md)
+
+## other
+
+* [开源协议](./other/agreement.md)

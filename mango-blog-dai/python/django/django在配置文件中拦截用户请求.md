@@ -56,6 +56,18 @@ def _wrap_instance__resolve(wrapping_functions,instance):
 ```
 
 * 其中的login_required可以换成其他的修饰器。
+
+* 使用：
+
+  ```pyhton2.7
+  urlpatterns += required(
+            partial(login_required,login_url='/accounts/login/'),
+            urlpatterns
+        )
+  ```
+
+  ​
+
 * 参考地址：https://www.91r.net/ask/9318962.html
 
 ### 2.拦截用户请求的示列(2):
