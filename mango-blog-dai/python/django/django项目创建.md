@@ -175,50 +175,40 @@
 
 * 在配置用户请求拦截的时候需要在配置文件中配置对应的 `LOGIN_URL = '/user/login'`, `LOGOUT_URL = '/logout'` 
 
-* 在common模块中创建require.py,并且添加如下代码（[也可以参考这篇文章](http://blog.csdn.net/qq_21178933/article/details/78531733)）：
-
-  ```python
-  # -*- coding: utf-8 -*-
-  ```
+* 在common模块中创建require.py,并且添加如下代码（[也可以参考这篇文章](http://blog.csdn.net/qq_21178933/article/details/78531733)）：  
 
 
-  def required(wrapping_functions, patterns_rslt):
-      if not hasattr(wrapping_functions, '__iter__'):
-          wrapping_functions = (wrapping_functions,)
-    
-      return [
-          _wrap_instance__resolve(wrapping_functions, instance)
-          for instance in patterns_rslt
-      ]
 
+```python
+# -*- coding: utf-8 -*-
+def required(wrapping_functions, patterns_rslt):
+   if not hasattr(wrapping_functions, '__iter__'):
+        wrapping_functions = (wrapping_functions,)
 
-  def _wrap_instance__resolve(wrapping_functions, instance):
-      if not hasattr(instance, 'resolve'):
-          return instance
-      resolve = getattr(instance, 'resolve')
-    
-      def _wrap_func_in_returned_resolver_match(*args, **kwargs):
-          rslt = resolve(*args, **kwargs)
-    
-          if not hasattr(rslt, 'func'):
-              return rslt
-          f = getattr(rslt, 'func')
-    
-          for _f in reversed(wrapping_functions):
-              # @decorate the function from inner to outter
-              f = _f(f)
-    
-          setattr(rslt, 'func', f)
-    
-          return rslt
-    
-      setattr(instance, 'resolve', _wrap_func_in_returned_resolver_match)
-    
+    return [
+        _wrap_instance__resolve(wrapping_functions, instance)
+        for instance in patterns_rslt
+    ]
+def _wrap_instance__resolve(wrapping_functions, instance):
+	if not hasattr(instance, 'resolve'):
       return instance
+  resolve = getattr(instance, 'resolve')
 
-  ```
+  def _wrap_func_in_returned_resolver_match(*args, **kwargs):
+      rslt = resolve(*args, **kwargs)
 
-  ​
+      if not hasattr(rslt, 'func'):
+          return rslt
+      f = getattr(rslt, 'func')
+
+      for _f in reversed(wrapping_functions):
+          # @decorate the function from inner to outter
+          f = _f(f)
+      setattr(rslt, 'func', f)
+      return rslt
+  setattr(instance, 'resolve', _wrap_func_in_returned_resolver_match)
+  return instance
+```
 
 * 在urls.py中添加如下配置（一定要写在登陆url之前）：
 
@@ -245,75 +235,80 @@
 
 2. 编写实体：
 
-   ```python
-   # -*- coding: utf-8 -*-
-   from __future__ import unicode_literals
+  * 创建AccountManager
 
-   from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
-   from django.contrib.auth.models import PermissionsMixin
-   from django.db import models
-   ```
+    ```python
+    class AccountManager(BaseUserManager):
+        def _create_user(self, username, password, is_staff, is_active, **extra_fields):
+            if username:
+                raise ValueError("the input username is error")
+            if password:
+                raise ValueError("the input password is error")
+            user = self.model(username=username, password=password, is_staff=is_staff, is_active=False, **extra_fields)
+            user.save(self._db)
+            return user
+
+        def create_user(self, username, password, **extra_fields):
+            return self._create_user(self, username=username, password=password, is_staff=False, is_active=False,
+                                     **extra_fields)
+
+        def create_superuser(self, username, password, **extra_fields):
+            return self._create_user(self, username=username, password=password, is_staff=True, is_active=True,
+                                     **extra_fields)
+    ```
+
+  * 创建AbstractUser：
+
+    ```python
+
+    class AbstractUser(AbstractBaseUser, PermissionsMixin):
+        # 用户名称
+        username = models.CharField(unique=True, max_length=30)
+        # password = models.CharField(max_length=20, null=False, default='123456')
+        is_staff = models.BooleanField(_('staff status'), default=False)
+        is_active = models.BooleanField(_('active'), default=True)
+        USERNAME_FIELD = 'username'
+
+        REQUIRED_FIELDS = []
+        objects = AccountManager()
+
+        class Meta(object):
+            db_table = 'account'
+            abstract = True
+
+        def get_short_name(self):
+            return self.get_username()
+
+        def get_full_name(self):
+            return self.get_username()
+
+    ```
+
+  * 创建Account：
+
+    ```python
+
+    class Account(AbstractUser):
+        nick_name = models.CharField(max_length=30, default='')
+
+        # login_date = models.DateTimeField(auto_now_add=True, editable=False, blank=True)
+
+        class Meta(AbstractUser.Meta):
+            permissions = (
+                ('person:info', '我的面板:个人信息'),
+                ('person:modify-pwd', '我的面板:修改密码'),
+                ('user:list', '平台用户管理:用户帐号管理'),
+                ('user:score-manage', '用户管理:积分账户管理'),
+            )
+
+            swappable = 'AUTH_USER_MODEL'
+
+    ```
+
+3. 自定义用户认证，在setting配置对应的认证的类，如下：
 
 
-   class AccountManager(BaseUserManager):
-       def _create_user(self, username, password, is_staff, is_active, **extra_fields):
-           if username:
-               raise ValueError("the input username is error")
-           if password:
-               raise ValueError("the input password is error")
-           user = self.model(username=username, password=password, is_staff=is_staff, is_active=False, **extra_fields)
-           user.save(self._db)
-           return user
-    
-       def create_user(self, username, password, **extra_fields):
-           return self._create_user(self, username=username, password=password, is_staff=False, is_active=False,
-                                    **extra_fields)
-    
-       def create_superuser(self, username, password, **extra_fields):
-           return self._create_user(self, username=username, password=password, is_staff=True, is_active=True,
-                                    **extra_fields)
-
-
-   class AbstractUser(AbstractBaseUser, PermissionsMixin):
-       # 用户名称
-       username = models.CharField(unique=True, max_length=30)
-       is_staff = models.BooleanField(_('staff status'), default=False)
-       is_active = models.BooleanField(_('active'), default=True)
-       USERNAME_FIELD = 'username'
-       REQUIRED_FIELDS = []
-       objects = AccountManager()
-    
-       class Meta(object):
-           db_table = 'account'
-           abstract = True
-    
-       def get_short_name(self):
-           return self.get_username()
-    
-       def get_full_name(self):
-           return self.get_username()
-
-
-   class Account(AbstractUser):
-       nick_name = models.CharField(max_length=30, default='')
-       login_date = models.DateTimeField(auto_now_add=True, editable=False, blank=True)
-    
-       class Meta(AbstractUser.Meta):
-           permissions = (
-               ('person:info', '我的面板:个人信息'),
-               ('person:modify-pwd', '我的面板:修改密码'),
-               ('user:list', '平台用户管理:用户帐号管理'),
-               ('user:score-manage', '用户管理:积分账户管理'),
-           )
-    
-           swappable = 'AUTH_USER_MODEL'
-   ```
-
-   ​
-
-3.  自定义用户认证，在setting配置对应的认证的类，如下：
-
-   ```python
+  ```python
    # -*- coding: utf-8 -*-
    from django.contrib.auth.backends import ModelBackend
    from django.db.models import Q
@@ -321,7 +316,7 @@
 
 
    class AccountBackend(ModelBackend):
-       
+
        def authenticate(self, username=None, password=None, **kwargs):
            try:
                user = Account.objects.get(Q(username=username))
@@ -330,6 +325,16 @@
            except Account.DoesNotExist:
                return None
            return None
+  ```
+
+
+​       
+4. 在配置文件中配置自定义的权限认证的类：
+
+   ```python
+   AUTHENTICATION_BACKENDS = (
+       'common.account_backend.AccountBackend',
+   )
    ```
 
-### 对应的项目地址为：[mangoDJ](https://github.com/daiqiaobing/mangoDJ)
+###  对应的项目地址为：[mangoDJ](https://github.com/daiqiaobing/mangoDJ)
