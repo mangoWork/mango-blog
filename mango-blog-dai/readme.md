@@ -154,6 +154,7 @@
   * [python基础语法](./python/2.python基础语法.md)
   * [python常见知识的区别](./python/python常见知识的区别.md)
   * [python创建虚拟环境的步骤](./python/python创建虚拟环境的步骤.md)
+  * [python错误解决](./python/python的错误解决.md)
 
 ## regularexpressions
 
