@@ -1,0 +1,18 @@
+####  interface 接口  
+##### 接口的定义
+- 只存在常量和抽象方法的类
+- 类使用interface关键字 非abstract  ef:Public interface hexiu {} 其抽象方法无需abstract修饰  ef: Public void test();
+##### 与抽象类的区别
+- 其他实现类不再是继承extends接口  而是实现这个接口 implements
+- 接口使用interface关键字  抽象类使用abstract
+- 接口中的抽象方法无需abstract关键字 写与不写都是public abstract ； 抽象类的抽象方法必须使用abstract修饰 
+- 接口在定义常量时  写与不写  都是Public static final 因为要被其他类实现其抽象方法  其方法都为Public
+- 一个类可实现多个接口   一个类只能继承一个抽象类
+
+##### 接口的要点  
+- 接口可继承多个接口
+- 接口不可创建实例 
+- 一个类实现一个接口  必须实现接口中的所有方法   且均为public
+
+##### 接口的意义
+- 规范与具体实现的分离   一个制定规则  多个实现其规则
