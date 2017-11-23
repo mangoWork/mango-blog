@@ -1,0 +1,23 @@
+## String StringBuffer StringBuilder的区别
+
+### 结论：执行速度：String < StringBuffer < StringBuilder
+     线程安全：StringBuffer > StringBuilder
+     
+### 执行速度 String < StringBuffer < StringBuilder
+#### String 
+- String : 类的声明是Public final , 即只能初始化一次不可变更 为string常量
+- 若要更改String对象的值，jvm实际上是创建一个新的String对象赋新值 ，将旧的同名String对象回收
+
+#### StringBuffer 和 StringBuilder
+- 与String相比  他们都是string变量，即在更改值的时候无需创建新的对象回收旧的对象
+
+### 线程安全性 StringBuffer > StringBuilder
+- 当一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer对象中的多个方法可以带有synchronized关键字（同步）
+- 而StringBuilder对象中的方法没有该关键字，在此类情况下就容易出现错误
+
+## 应用场景总结
+- String 适用于少量字符串操作的情况下
+- StringBuilder 适用于单线程在字符串缓冲区进行大量操作的情况
+- StringBuffer 适用于多线程在字符串缓冲区进行大量操作的情况
+
+
