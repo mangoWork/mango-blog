@@ -30,6 +30,8 @@
 
 [other:其他](#other)
 
+[translation](./translation/readme.md)
+
 ## 基础
 
 * 常用词语解释：[常用词语解释](./常用词语解释.md)
@@ -150,8 +152,8 @@
   * python运维
     * [ansible模块介绍](./python/python运维/ansible模块介绍.md)
     * [python运维基础模块介绍](./python/python运维/python运维基础模块介绍.md)
-  * [python基础知识](./python/1.python基础知识.md)
-  * [python基础语法](./python/2.python基础语法.md)
+  * [python解释器比较](./python/python的几种解释器比较.md)
+  * [pythonpython基础知识点](./python/python基础知识点.md)
   * [python常见知识的区别](./python/python常见知识的区别.md)
   * [python创建虚拟环境的步骤](./python/python创建虚拟环境的步骤.md)
   * [python错误解决](./python/python的错误解决.md)
