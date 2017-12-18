@@ -34,24 +34,24 @@
       ```
 
 
-    * 中间件的执行顺序？
-    * 我们从浏览器发出一个请求（Request）之后，得到一个响应的内容(HttpResponse),这个过程如下所示：
+* 中间件的执行顺序？
+* 我们从浏览器发出一个请求（Request）之后，得到一个响应的内容(HttpResponse),这个过程如下所示：
 
-    ![](http://img.hb.aicdn.com/79870a10eedbcfbd6049fb64c6d42a77d53d2184d5f0-2ZG00B_fw658)
+![](http://img.hb.aicdn.com/79870a10eedbcfbd6049fb64c6d42a77d53d2184d5f0-2ZG00B_fw658)
 
-    * 在每次的请求的时候都会按照配置文件中的顺序执行中间件的proccess_resuest函数，该函数会返回None或者HttpResponse（如果该函数返回None则继续执行，如果返回HttpResonse对象则不会继续执行相应的中间件或者view），其中的proccess_response会在最后执行，按照定义的中间件的相反顺序执行。
+* 在每次的请求的时候都会按照配置文件中的顺序执行中间件的proccess_resuest函数，该函数会返回None或者HttpResponse（如果该函数返回None则继续执行，如果返回HttpResonse对象则不会继续执行相应的中间件或者view），其中的proccess_response会在最后执行，按照定义的中间件的相反顺序执行。
 
-    * 如何编写中间件？
+* 如何编写中间件？
 
-    * 中间件不用继承任何类（可以继承object），代码如下所示：
+* 中间件不用继承任何类（可以继承object），代码如下所示：
 
-    * ```python
-      class CommonMiddleware(object):
-       　　　def process_request(self, request):
-      　　　　　return None
-      　　　def process_response(self, request, response):
-      　　　　　return response
-      ```
+  * ```python
+    class CommonMiddleware(object):
+     　　　def process_request(self, request):
+    　　　　　return None
+    　　　def process_response(self, request, response):
+    　　　　　return response
+    ```
 
 
   ### 4. Django如何实现多表的查询？
@@ -118,9 +118,8 @@
     * ordering
       * 这个字段是告诉Django模型对象返回的结果是按照哪个字段排序：
       * ordering=['ordering']   #按照订单的升序排列
-      * ordering=['ordering']   #按照订单的降序排列   - 表示降序
+      * ordering=['-ordering']   #按照订单的降序排列   - 表示降序
       * ordering=['ordering']   #随即排序
-      * ordering=['ordering','-username']   #按照ordering升序，按照username进行降序排序
       * ordering=['ordering','-username']   #按照ordering升序，按照username进行降序排序
     * permissions
       * permissions主要是为了在Django Admin管理模块下使用的，如果设置了这个属性，可以让指定的方法权限描述更加清晰可读。Django自动为每个设置了admin对象创建添加，删除和修改的权限。
@@ -147,31 +146,39 @@
   ### 9.Django事务
 * 管理数据库事务
 
-  *	Django默认的行为是运行在自动提交模式下的，任何一个查询都立即被提交到数据库中，除非激活一个事务
+  *  Django默认的行为是运行在自动提交模式下的，任何一个查询都立即被提交到数据库中，除非激活一个事务
     * 把事务绑定在HTTP请求上
+
     * 在web上的一种简单处理事务的方式是将每个请求用事务包装起来。在每个你想保存这种行为数据的配置文件中，设置ATOMIC_REQUESTS值为True
+
     * 工作的过程：在调用一个view里面的方法之前，django开始一个事务，如果发出的相应没有什么问题，Django就会提交这个事务。如果在view里产生异常，Django就会回滚事务。
+
     * 在实际的操作中，可以通过如下atomic()装饰器把这一功能简单地加载到视图函数上。
+
     * 表示事务仅仅是当前视图有效，诸如模版响应之类的中间件操作是运行在事务之外的
-    * @transaction.non_atomic_requests<br>
-       def my_view(request):<br>
-        　    　do_stuff()
-       * 更加明确的控制事务
 
+       ```python
+       @transaction.non_atomic_requests
+       def my_view(request):
+        　 do_stuff()
+       ```
 
-```python
- from django.db import IntegrityError, transaction
+    * 更加明确的控制事务
 
-  @transaction.atomic
-  def viewfunc(request):
-	create_parent()
-	try:
-    	with transaction.atomic():
-        	generate_relationships()
-	except IntegrityError:
-			handle_exception()
-	add_children()
-```
+       ```python
+        from django.db import IntegrityError, transaction
+
+         @transaction.atomic
+         def viewfunc(request):
+       	create_parent()
+       	try:
+           	with transaction.atomic():
+               	generate_relationships()
+       	except IntegrityError:
+       			handle_exception()
+       	add_children()
+       ```
+
 
   ### 10.Django如何处理一个请求
 * 当一个用户请求Django站点的一个页面，下面是Django系统决定执行哪个python代码：
@@ -193,10 +200,11 @@
 
 ### 12.如何限制HTTP的请求方法
 
-* @require_http_methods(["GET", "POST"])<br>
-
-   def my_view(request):<br>
-   	　　pass<br>
+```python
+@require_http_methods(["GET", "POST"])<br>
+def my_view(request):
+	do_task()
+```
 
 * require_GET()    只允许视图接受GET方法的装饰器。
 * require_POST() 只允许视图接受POST方法的装饰器。
@@ -230,12 +238,12 @@
 
   * USERNAME_FIELD   描述User模型上用作唯一标识符的字段名称的字符串，字段必须是唯一的。
 
-  *	REQUIRES_FIELDS   列出必须的字段
+  *  REQUIRES_FIELDS   列出必须的字段
 
-  *	is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
-  *	get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
-  *	get_short_name()一个短的并且正式的用户标识符。
-  *	自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
+    *is_active  指示用户是否被视为“活动”的布尔属性，默认为True。如何选择实施它取决于选择身份验证后端的信息。
+    *get_full_name()   用户更长且正式的标识，常用的解释会是用户的完整名称，可以是任何字符串
+    *get_short_name()一个短的并且正式的用户标识符。
+    *自定义了User模型之后，如果你的User模型定义了username、email、is_staff、is_active、is_superuser、last_login、date_joined跟默认的字段是一样的话，那么你就使用Django的UserManager就行了；总之，如果定义了有不同的字段的时候，你就需要自定义一个管理器，它继承BaseUserManager并提供两个额外的方法。
 
   *create_user(*username,password=None,**other_fields)
   *create_superuser(*username,password,**other_fields)
@@ -266,23 +274,24 @@ AUTHENTICATION_BACKENDS= (
 ```
 
   ### 19. \*args和**args的区别?
-  *用当你不确定你的函数里将要传递多少参数的时候，可以使用*args，可以传递任意参数
-  *\*\*相似的，**kwargs允许你使用没有实现预定好的参数名
+  用当你不确定你的函数里将要传递多少参数的时候，可以使用\*args，可以传递任意参数
+  \*\*相似的，**kwargs允许你使用没有实现预定好的参数名
 
   ### 20.装饰器的作用？
 
 * 为已经存在的对象添加额外的功能。
 
-  ### 21.python中的重载
+### 21.python中的重载
+
 * 重载主要解决两个问题：
     * 可变参数类型
     * 可变参数的个数
 
   ### 22._new_和_init_的区别？
-* 这个__new__是一个静态方法区，而__init__是一个实例方法。
-* __new__方法会返回一个创建的实例，而__init__什么都不会返回
-* 只有在__new__返回一个class的实例时后面的__init__才能被调用
-* 当创建一个新的实例时调用__new__，初始化一个实例用__init__
+* 这个\__new\__是一个静态方法区，而\__init\__是一个实例方法。
+* \__new\__方法会返回一个创建的实例，而\__init\__什么都不会返回
+* 只有在\__new\__返回一个class的实例时后面的\__init\__才能被调用
+* 当创建一个新的实例时调用\__new\__，初始化一个实例用\__init\__
 
 
 ### 22.	Python垃圾回收机制
@@ -291,19 +300,18 @@ AUTHENTICATION_BACKENDS= (
   * 引用计数法
 
     * PyObject是每个对象必有的内容，其中ob_refcnt就是为引用计数。当一个对象有新的引用的时候，它的ob_refcnt就会增加，当引用它的对象被删除的时候，它的ob_refcnt就会减少。当obj_refcnt为0的时候，该对象的生命就结束了。
-
-
     * 优点：
       * 简单
       * 实时性
     * 缺点
       * 维护引用计数消耗资源
       * 循环引用
-    * 标记-清除机制
-      * 基本思路就是先按需分配，等到没有空闲的时候从寄存器和程序栈上引用出发，遍历以对象为节点、以引用为边构成图，把所有可以访问的对象上打上标记，然后清扫一遍内存空间，把没有标记的对象释放。
-    * 分代技术
-      * 分代回收的整体思想是：将系统中的所有内存块根据其存活的时间划分为不同的集合，每个集合就成为一个“代”。垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
-      * Python默认定义了三代对象集合，索引数越大，对象存活时间越长。
+  * 标记-清除机制
+    * 基本思路就是先按需分配，等到没有空闲的时候从寄存器和程序栈上引用出发，遍历以对象为节点、以引用为边构成图，把所有可以访问的对象上打上标记，然后清扫一遍内存空间，把没有标记的对象释放。
+  * 分代技术
+    * 分代回收的整体思想是：将系统中的所有内存块根据其存活的时间划分为不同的集合，每个集合就成为一个“代”。垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
+    * Python默认定义了三代对象集合，索引数越大，对象存活时间越长。
+
 
 ### 23.    python中的is与==？
 * python中的is是对比地址，==是对比值

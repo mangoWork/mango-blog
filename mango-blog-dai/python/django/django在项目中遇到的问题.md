@@ -21,3 +21,4 @@
 *  设置了`ATOMIC_REQUESTS`为True，则表示每个view都会开启事务。
 
 *  解决办法，在对应的view中使用修饰器`@transaction.non_atomic_requests` 修饰，表示不是用事务
+
