@@ -175,7 +175,9 @@
     * [变量的解构赋值](./web/es6/3.变量的解构赋值.md)
   * vue
     * [vue错误解决](./web/vue/vue错误解决.md)
-    * [vue学习](./web/vue/vue学习.md)
+    * [vue学习](js常见的错误.mdvue/vue学习.md)
+  * [js常见的错误](./web/js常见的错误.md)
+  * [webpack创建项目详解](./web/webpack创建项目详解.md)
 
 ## other
 
