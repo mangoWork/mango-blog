@@ -46,3 +46,21 @@
 * 接着重启防火墙
 
   > systemctl restart firewall.service
+
+### 3.  如何让连接新主机时，不进行公钥确认
+
+* 在首次连接服务器的时候， 会弹出公钥确认的提示，会导致任务失败。SSH客户端的StrictHostKeyChecking配置指令，可以实现当第一次连接服务器时，自动接收新的公钥。只需要修改``/etc/ssh/ssh_config``文件，包含下列句子：
+
+  ```shell
+  Host localhost
+    StrictHostKeyChecking no
+  Host 0.0.0.0
+    StrictHostKeyChecking no
+  # 主机名以hadoop-*开头不用检查ssh公钥  在/etc/ssh/ssh_config 文件
+  Host hadoop-mango-*
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null    # 防止远程主机公钥改变导致 SSH 连接失败
+  ```
+
+  ​
+
