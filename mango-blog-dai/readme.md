@@ -30,6 +30,8 @@
 
 [other:其他](#other)
 
+[项目开发中的问题](#problem)
+
 [translation](./translation/readme.md)
 
 ## 基础
@@ -178,6 +180,12 @@
     * [vue学习](js常见的错误.mdvue/vue学习.md)
   * [js常见的错误](./web/js常见的错误.md)
   * [webpack创建项目详解](./web/webpack创建项目详解.md)
+
+## problem
+
+* 目录结构
+  * [web相关](./dev-problem/web相关.md)
+  * [python相关](./dev-problem/python相关.md)
 
 ## other
 
