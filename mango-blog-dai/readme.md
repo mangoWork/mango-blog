@@ -34,6 +34,8 @@
 
 [translation](./translation/readme.md)
 
+[algorithm](#algorithm)
+
 ## 基础
 
 * 常用词语解释：[常用词语解释](./常用词语解释.md)
@@ -180,6 +182,10 @@
     * [vue学习](js常见的错误.mdvue/vue学习.md)
   * [js常见的错误](./web/js常见的错误.md)
   * [webpack创建项目详解](./web/webpack创建项目详解.md)
+
+## algorithm
+
+* [algorithm: 算法常用的名词解释](./algorithm/常用名词解释.md)
 
 ## problem
 
