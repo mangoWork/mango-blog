@@ -52,6 +52,7 @@
 
 - IT书单：[IT书单计划](./book/IT-book.md)
 - 非IT书单：[非IT书单](./book/not-IT-book.md)
+- 书籍介绍： [计算机书籍下载地址](./book/计算机书籍下载.md)
 
 ## collaborationtools 
 
