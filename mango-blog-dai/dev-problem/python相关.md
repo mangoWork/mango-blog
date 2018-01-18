@@ -1,6 +1,14 @@
 ## Python
 
-
+1.  在linux下无法使用matplotlib模块，无法安装python3-tk
+   * 原因
+     *   `tk`在python中自带，系统默认的是python2.X版本，当使用python3.x的时候需要重新编译
+   * 解决办法：
+     * 下载源文件： `wget https://www.python.org/ftp/python/3.5.3/Python-3.5.3.tar.xz`
+     * 解压文件：`xz -d Python-3.5.3.tar.xz&&tar -xvf Python-3.5.3.tar`
+     * 配置python文件： `cd Python-3.5.3&&./configure`
+     * 编译并且安装： `make&&make altinstall`
+     * 校验：`import tkinter as tk`
 
 ## Django
 
