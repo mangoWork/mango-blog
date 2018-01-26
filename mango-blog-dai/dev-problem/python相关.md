@@ -55,4 +55,55 @@
 
    * 解决办法，在对应的view中使用修饰器`@transaction.non_atomic_requests` 修饰，表示不是用事务
 
+3. Django中默认使用的是内连接，如何使用左连接？
+
+
+   * 数据库中对应的agent表和agentpaylog表分别如下所示：
+
+     * agent表的代码如下所示：
+
+       ```python
+       class Agent(models.Model):
+           account = models.OneToOneField(Account, on_delete=models.PROTECT, db_constraint=False)
+           level = models.ForeignKey(AgentLevel, on_delete=models.PROTECT, db_constraint=False)
+           parent_agent_id = models.IntegerField(default=0, help_text='父级推荐人')
+           created = models.DateTimeField(auto_now_add=True, blank=True, editable=False)
+           updated = models.DateTimeField(null=True, blank=True)
+
+           class Meta:
+               db_table = 'agent'
+       ```
+
+     *  agent_pay_log表的代码如下所示：
+
+       ```python
+
+       class AgentPayLog(models.Model):
+           amount = models.DecimalField(max_digits=12, decimal_places=2, default=0, help_text='金额')
+           agent = models.ForeignKey(Agent, on_delete=models.PROTECT, db_constraint=False, help_text='推广用户')
+           reward_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0, help_text='用户推荐奖金金额')
+           created = models.DateTimeField(auto_now_add=True, blank=True, editable=False)
+           updated = models.DateTimeField(null=True, blank=True)
+
+           class Meta:
+               db_table = 'agent_pay_log'
+       ```
+
+   *  使用django中的model查询所有的Agent的id以及对应的AgentPayLog:
+
+     ```python
+     filter = [Q(agentpaylog__isnull=True) | Q(agentpaylog__isnull=False)]
+             agents = Agent.objects.filter(*filter).values('id', 'agentpaylog__agent_id')
+     ```
+
+   * 其中打印出来的sql语句如下所示：
+
+     ```sql
+     SELECT `agent`.`id`, `agent_pay_log`.`agent_id`
+     FROM `agent`
+     LEFT OUTER JOIN `agent_pay_log` ON (`agent`.`id` = `agent_pay_log`.`agent_id`)
+     WHERE(`agent_pay_log`.`id` IS NULL OR `agent_pay_log`.`id` IS NOT NULL);
+     ```
+
+     ​
 
