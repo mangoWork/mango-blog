@@ -187,6 +187,7 @@
 ## algorithm
 
 * [algorithm: 算法常用的名词解释](./algorithm/常用名词解释.md)
+* [加密算法：对称加密、非对称加密](./algorithm/对称加密以及非对称加密.md)
 
 ## problem
 
