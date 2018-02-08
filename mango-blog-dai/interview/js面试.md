@@ -106,8 +106,8 @@
 
 * prototype和_proto_的区别
 
-  ![](https://hbimg.b0.upaiyun.com/b1777ebdb9053eebc3af1b5618a9df10a575fe03c64d-XJpZ0r_fw658)
+  ![](../../img/dai/interview/js/prototype.png)
 
-  ![](https://hbimg.b0.upaiyun.com/44305e401ffd2e6104a3b59e7521f86e01785dafb950-utNDcW_fw658)
+  ![](../../img/dai/interview/js/prototype1.png)
 
   ​
