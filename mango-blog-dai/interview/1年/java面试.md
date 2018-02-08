@@ -1,4 +1,4 @@
-﻿# Java知识点
+# Java知识点
 
 
 
@@ -321,7 +321,7 @@ final也是很多面试喜欢问的地方,能回答下以下三点就不错了:
 | short | 2    | 16   |
 | int   | 4    | 32   |
 | long  | 8    | 64   |
-|float|4|32
+| float|4|32
 |double|8|64|
 |char|2|16|
 
@@ -387,7 +387,7 @@ Java 垃圾回收机制最基本的做法是分代回收。内存中的区域被
 
 ## Java中的集合及其继承关系
 关于集合的体系是每个人都应该烂熟于心的,尤其是对我们经常使用的List,Map的原理更该如此.这里我们看这张图即可:
-![这里写图片描述](http://img.blog.csdn.net/20141105193133812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGQ4NjQxNDAxMzA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![这里写图片描述](../../../img/dai/interview/java/collections.png)
 
 更多内容可见[集合类总结](http://write.blog.csdn.net/postedit/40826423)
 
