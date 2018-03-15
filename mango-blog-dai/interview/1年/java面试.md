@@ -94,7 +94,7 @@
 
 * String使用private final char value[]来实现字符串的存储，也就是说String对象创建之后，就不能修改次对象中存储的字符串内容，就是因为如此，String才是不可变的。当使用String的replace等方法修改时，将会创建一个新的对象来实现，而不是对元对象进行修改。
 
-  ![](../../img/dai/string-edit.png)
+  ![](../../../img/dai/string-edit.png)
 
 ### 引用变量与对象
 
@@ -321,7 +321,7 @@ final也是很多面试喜欢问的地方,能回答下以下三点就不错了:
 | short | 2    | 16   |
 | int   | 4    | 32   |
 | long  | 8    | 64   |
-| float|4|32
+| float|4|32|
 |double|8|64|
 |char|2|16|
 
@@ -479,7 +479,7 @@ Java 中，可以使用 SimpleDateFormat 类或者 joda-time 库来格式日期�
 ## 简单描述java异常体系
 * Java语言将异常划分为两类：Error和Exception，如图所示：
 
-![](../../img/dai/异常体系.png)
+![](../../../img/dai/异常体系.png)
 
 * Throwable：有两个重要的子类：Exception（异常）和Error（错误），两者都包含了大量的异常处理类。
 * Error（错误）：是程序中无法处理的错误，表示运行应用程序中出现了严重的错误。此类错误一般表示代码运行时JVM出现问题。通常有Virtual MachineError（虚拟机运行错误）、NoClassDefFoundError（类定义错误）等。比如说当jvm耗完可用内存时，将出现OutOfMemoryError。此类错误发生时，JVM将终止线程。
