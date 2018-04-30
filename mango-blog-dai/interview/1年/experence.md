@@ -61,11 +61,11 @@
 
   *  支付的流程图如下所示：
 
-    ![](../../../img/dai/project/iGB/pay_process.png)
+    ![](../img/project/iGB/pay_process.png)
 
   *   支付的详细的流程如下所示：
 
-     ![](../../../img/dai/project/iGB/iGB_pay_detail.png)
+     ![](../img/project/iGB/iGB_pay_detail.png)
 
   ​
 

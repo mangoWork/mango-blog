@@ -22,8 +22,8 @@
 
 * Reactor模式
 
-  ![](https://hbimg.b0.upaiyun.com/c85e910fa2456c04ef83309b9a498b178a584c3875f5-vMY0E4_fw658)
+  ![](../img/rector.png)
 
 * Proactor模式
 
-![](https://hbimg.b0.upaiyun.com/d2945401d68dcc0a10b6d43610bce63b0ec42ad05f3a-Pyy85T_fw658)
+![](../img/Proactor.png)

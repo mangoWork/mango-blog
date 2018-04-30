@@ -6,7 +6,7 @@
 
 * Spring框架包含的模块如下图所示：
 
-  ![](../../../img/dai/spring/spring包含的模块.png)
+  ![](../img/spring/spring_moudle.png)
 
 ### 2. 使用Spring框架的优缺点？
 

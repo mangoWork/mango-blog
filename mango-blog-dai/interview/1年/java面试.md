@@ -94,7 +94,7 @@
 
 * String使用private final char value[]来实现字符串的存储，也就是说String对象创建之后，就不能修改次对象中存储的字符串内容，就是因为如此，String才是不可变的。当使用String的replace等方法修改时，将会创建一个新的对象来实现，而不是对元对象进行修改。
 
-  ![](../../../img/dai/string-edit.png)
+  ![](../img/java/string-edit.png)
 
 ### 引用变量与对象
 
@@ -387,7 +387,7 @@ Java 垃圾回收机制最基本的做法是分代回收。内存中的区域被
 
 ## Java中的集合及其继承关系
 关于集合的体系是每个人都应该烂熟于心的,尤其是对我们经常使用的List,Map的原理更该如此.这里我们看这张图即可:
-![这里写图片描述](../../../img/dai/interview/java/collections.png)
+![这里写图片描述](../img/java/collections.png)
 
 更多内容可见[集合类总结](http://write.blog.csdn.net/postedit/40826423)
 
@@ -479,7 +479,7 @@ Java 中，可以使用 SimpleDateFormat 类或者 joda-time 库来格式日期�
 ## 简单描述java异常体系
 * Java语言将异常划分为两类：Error和Exception，如图所示：
 
-![](../../../img/dai/异常体系.png)
+![](../img/java/throw.png)
 
 * Throwable：有两个重要的子类：Exception（异常）和Error（错误），两者都包含了大量的异常处理类。
 * Error（错误）：是程序中无法处理的错误，表示运行应用程序中出现了严重的错误。此类错误一般表示代码运行时JVM出现问题。通常有Virtual MachineError（虚拟机运行错误）、NoClassDefFoundError（类定义错误）等。比如说当jvm耗完可用内存时，将出现OutOfMemoryError。此类错误发生时，JVM将终止线程。

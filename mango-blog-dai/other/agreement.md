@@ -21,7 +21,7 @@
 
 
 
-![](../../img/dai/agreement/agreement.jpg)
+![](./img//agreement.jpg)
 
 
 

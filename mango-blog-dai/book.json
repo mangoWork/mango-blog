@@ -1,0 +1,9 @@
+{
+    "plugins": ["splitter", "-search", "search-pro", "toggle-chapters"],
+    "pluginsConfig": {
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord" : ["Gitbook Use"]
+        }
+    }
+}

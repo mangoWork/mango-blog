@@ -15,7 +15,7 @@
 
 3. Spring由哪些模块组成的？
 
-   ![](../../../img/dai/spring/spring包含的模块.png)
+   ![](../img/spring/spring_moudle.png)
 
 4.  核心容器(应用上下文)模块
 

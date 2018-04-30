@@ -106,8 +106,9 @@
 
 * prototype和_proto_的区别
 
-  ![](../../../img/dai/interview/js/prototype.png)
+  ![](../img/js/prototype.png)
 
-  ![](../../../img/dai/interview/js/prototype1.png)
+  ![](../img/js/prototype1.png)
 
   ​
+
