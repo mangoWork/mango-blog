@@ -1,0 +1,1843 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.1.7、python网络编程和多线程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../django/readme.html" />
+    
+    
+    <link rel="prev" href="python_error.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第一部分 基础部分
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../word_explain.html">
+            
+                <a href="../../word_explain.html">
+            
+                    
+                    常用词语解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../computer_basic.html">
+            
+                <a href="../../computer_basic.html">
+            
+                    
+                    计算机语言中的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    第二部分 Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/IO/readme.html">
+            
+                <a href="../../java/IO/readme.html">
+            
+                    
+                    1、Java IO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../java/IO/IO.html">
+            
+                <a href="../../java/IO/IO.html">
+            
+                    
+                    IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../java/IO/nio_basic.html">
+            
+                <a href="../../java/IO/nio_basic.html">
+            
+                    
+                    NIO基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../java/IO/NIO_TCP.html">
+            
+                <a href="../../java/IO/NIO_TCP.html">
+            
+                    
+                    TCP之NIO连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/lambda/readme.html">
+            
+                <a href="../../java/lambda/readme.html">
+            
+                    
+                    2、Lambada
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../java/lambda/lambda_to_use.html">
+            
+                <a href="../../java/lambda/lambda_to_use.html">
+            
+                    
+                    lambda基本用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../java/multi_thread/readme.html">
+            
+                <a href="../../java/multi_thread/readme.html">
+            
+                    
+                    3、多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../java/multi_thread/Disruptor.html">
+            
+                <a href="../../java/multi_thread/Disruptor.html">
+            
+                    
+                    Disruptor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../java/multi_thread/threa_basic.html">
+            
+                <a href="../../java/multi_thread/threa_basic.html">
+            
+                    
+                    1、线程的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../java/multi_thread/thread_lock.html">
+            
+                <a href="../../java/multi_thread/thread_lock.html">
+            
+                    
+                    2、线程锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../java/multi_thread/thread_notify.html">
+            
+                <a href="../../java/multi_thread/thread_notify.html">
+            
+                    
+                    3、线程通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../java/multi_thread/thread_pattern.html">
+            
+                <a href="../../java/multi_thread/thread_pattern.html">
+            
+                    
+                    4、多线程常用模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../../java/multi_thread/Executor.html">
+            
+                <a href="../../java/multi_thread/Executor.html">
+            
+                    
+                    5、Executor框架以及线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../../java/multi_thread/thread_queue.html">
+            
+                <a href="../../java/multi_thread/thread_queue.html">
+            
+                    
+                    6、多线程队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../java/collection.html">
+            
+                <a href="../../java/collection.html">
+            
+                    
+                    集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../javaweb/readme.html">
+            
+                <a href="../../javaweb/readme.html">
+            
+                    
+                    第三部分 Java Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../javaweb/spring/readme.html">
+            
+                <a href="../../javaweb/spring/readme.html">
+            
+                    
+                    3.1、Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    第四部分 Python知识点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    4.1、Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="python_explain.html">
+            
+                <a href="python_explain.html">
+            
+                    
+                    4.1.1、python解释器比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="python_basic.html">
+            
+                <a href="python_basic.html">
+            
+                    
+                    4.1.2、python基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="python_compare.html">
+            
+                <a href="python_compare.html">
+            
+                    
+                    4.1.3、python常见知识区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="python_env.html">
+            
+                <a href="python_env.html">
+            
+                    
+                    4.1.4、python创建虚拟环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="python_partial_wrapper.html">
+            
+                <a href="python_partial_wrapper.html">
+            
+                    
+                    4.1.5、partial和wrapper的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="python_error.html">
+            
+                <a href="python_error.html">
+            
+                    
+                    4.1.6、python错误解决
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.1.7" data-path="python_network.html">
+            
+                <a href="python_network.html">
+            
+                    
+                    4.1.7、python网络编程和多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../django/readme.html">
+            
+                <a href="../django/readme.html">
+            
+                    
+                    4.2、Django框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../django/django_create.html">
+            
+                <a href="../django/django_create.html">
+            
+                    
+                    4.2.1 Django项目的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../django/django_user.html">
+            
+                <a href="../django/django_user.html">
+            
+                    
+                    4.2.2 Django配置用户拦截请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../django/django_code.html">
+            
+                <a href="../django/django_code.html">
+            
+                    
+                    4.2.3 Django源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../django/django_error.html">
+            
+                <a href="../django/django_error.html">
+            
+                    
+                    4.2.4 Django遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../python_operation/readme.html">
+            
+                <a href="../python_operation/readme.html">
+            
+                    
+                    3.3 Python运维
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../python_operation/ansible_basic.html">
+            
+                <a href="../python_operation/ansible_basic.html">
+            
+                    
+                    3.4.1 ansible模块介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../python_operation/python_op.html">
+            
+                <a href="../python_operation/python_op.html">
+            
+                    
+                    3.4.2 python运维模块介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../algorithm/readme.html">
+            
+                <a href="../../algorithm/readme.html">
+            
+                    
+                    第五部分 数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../algorithm/word.html">
+            
+                <a href="../../algorithm/word.html">
+            
+                    
+                    5.1、算法中常用的名词解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../algorithm/encryption_algorithm.html">
+            
+                <a href="../../algorithm/encryption_algorithm.html">
+            
+                    
+                    5.2、加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../algorithm/readme.html">
+            
+                <a href="../../algorithm/readme.html">
+            
+                    
+                    第六部分 数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../database/basic/readme.html">
+            
+                <a href="../../database/basic/readme.html">
+            
+                    
+                    6.1、数据库基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../../database/basic/pool.html">
+            
+                <a href="../../database/basic/pool.html">
+            
+                    
+                    数据库连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../database/mysql/readme.html">
+            
+                <a href="../../database/mysql/readme.html">
+            
+                    
+                    6.2、MySQL数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../../database/mysql/mysql_basic.html">
+            
+                <a href="../../database/mysql/mysql_basic.html">
+            
+                    
+                    6.2.1 MySQL基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../../database/mysql/mysql_error.html">
+            
+                <a href="../../database/mysql/mysql_error.html">
+            
+                    
+                    6.2.2 MySQL常见错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../database/redis/readme.html">
+            
+                <a href="../../database/redis/readme.html">
+            
+                    
+                    6.3、Redis数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../../database/redis/redis_basic.html">
+            
+                <a href="../../database/redis/redis_basic.html">
+            
+                    
+                    redis数据库基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../database/db_optimization.html">
+            
+                <a href="../../database/db_optimization.html">
+            
+                    
+                    数据库优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../network/readme.html">
+            
+                <a href="../../network/readme.html">
+            
+                    
+                    第七部分 计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../network/network_basic.html">
+            
+                <a href="../../network/network_basic.html">
+            
+                    
+                    7.1、计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../network/TCPIP/readme.html">
+            
+                <a href="../../network/TCPIP/readme.html">
+            
+                    
+                    7.2、图解TCP/IP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../network/TCPIP/chapter1.html">
+            
+                <a href="../../network/TCPIP/chapter1.html">
+            
+                    
+                    7.2.1、计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../../network/TCPIP/chapter2.html">
+            
+                <a href="../../network/TCPIP/chapter2.html">
+            
+                    
+                    7.2.2、TCPIP基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../../network/TCPIP/chapter3.html">
+            
+                <a href="../../network/TCPIP/chapter3.html">
+            
+                    
+                    7.2.3、数据链路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.4" data-path="../../network/TCPIP/chapter4.html">
+            
+                <a href="../../network/TCPIP/chapter4.html">
+            
+                    
+                    7.2.4、IP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.5" data-path="../../network/TCPIP/chapter5.html">
+            
+                <a href="../../network/TCPIP/chapter5.html">
+            
+                    
+                    7.2.5、IP协议相关技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../os/readme.html">
+            
+                <a href="../../os/readme.html">
+            
+                    
+                    第八部分 操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../os/basic/readme.html">
+            
+                <a href="../../os/basic/readme.html">
+            
+                    
+                    8.1、操作系统基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../../os/basic/op_basic.html">
+            
+                <a href="../../os/basic/op_basic.html">
+            
+                    
+                    8.1.1 操作系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../os/linux/readme.html">
+            
+                <a href="../../os/linux/readme.html">
+            
+                    
+                    8.2、操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../../os/linux/linux_command.html">
+            
+                <a href="../../os/linux/linux_command.html">
+            
+                    
+                    8.2.1、linux命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../../os/linux/ubtuntu_command.html">
+            
+                <a href="../../os/linux/ubtuntu_command.html">
+            
+                    
+                    8.2.1、ubuntu命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../collaborationTools/readme.html">
+            
+                <a href="../../collaborationTools/readme.html">
+            
+                    
+                    第九部分 协作工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../collaborationTools/git/readme.md">
+            
+                <span>
+            
+                    
+                    9.1 git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../../collaborationTools/git/git_basic_command.html">
+            
+                <a href="../../collaborationTools/git/git_basic_command.html">
+            
+                    
+                    9.1.1、git基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2" data-path="../../collaborationTools/git/git_basic.html">
+            
+                <a href="../../collaborationTools/git/git_basic.html">
+            
+                    
+                    9.1.2、git基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.3" data-path="../../collaborationTools/git/git_detach.html">
+            
+                <a href="../../collaborationTools/git/git_detach.html">
+            
+                    
+                    9.1.3、git处于游离状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.4" data-path="../../collaborationTools/git/sourcetree_install.html">
+            
+                <a href="../../collaborationTools/git/sourcetree_install.html">
+            
+                    
+                    9.1.4、sourcetree的安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../web/readme.html">
+            
+                <a href="../../web/readme.html">
+            
+                    
+                    第十部分 前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../web/es6/readme.html">
+            
+                <a href="../../web/es6/readme.html">
+            
+                    
+                    10.1、ES6
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../../web/es6/es6_description.html">
+            
+                <a href="../../web/es6/es6_description.html">
+            
+                    
+                    1、ES6的简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../../web/es6/let_const.html">
+            
+                <a href="../../web/es6/let_const.html">
+            
+                    
+                    2、let和const命令.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.3" data-path="../../web/es6/var_value.html">
+            
+                <a href="../../web/es6/var_value.html">
+            
+                    
+                    3、变量的解构赋值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../web/vue/readme.html">
+            
+                <a href="../../web/vue/readme.html">
+            
+                    
+                    10.2、Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../../web/vue/vue_study.html">
+            
+                <a href="../../web/vue/vue_study.html">
+            
+                    
+                    1、Vue学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="../../web/vue/vue_error.html">
+            
+                <a href="../../web/vue/vue_error.html">
+            
+                    
+                    2、Vue错误解决
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../web/angular/readme.html">
+            
+                <a href="../../web/angular/readme.html">
+            
+                    
+                    10.3、Angular
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../../web/angular/angular_study.html">
+            
+                <a href="../../web/angular/angular_study.html">
+            
+                    
+                    1、Angular学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.2" data-path="../../web/angular/angular_error.html">
+            
+                <a href="../../web/angular/angular_error.html">
+            
+                    
+                    2、Abgular错误解决
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../web/other/readme.html">
+            
+                <a href="../../web/other/readme.html">
+            
+                    
+                    10.4、其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.4.1" data-path="../../web/other/js_error.html">
+            
+                <a href="../../web/other/js_error.html">
+            
+                    
+                    1、js常见错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.2" data-path="../../web/other/webpack_item.html">
+            
+                <a href="../../web/other/webpack_item.html">
+            
+                    
+                    2、webpack创建项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../other/readme.html">
+            
+                <a href="../../other/readme.html">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../other/agreement.html">
+            
+                <a href="../../other/agreement.html">
+            
+                    
+                    1、开源协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../other/token.html">
+            
+                <a href="../../other/token.html">
+            
+                    
+                    2、Token介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >4.1.7、python网络编程和多线程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="python&#x4E2D;socket&#x7F16;&#x7A0B;">python&#x4E2D;socket&#x7F16;&#x7A0B;</h2>
+<p>[TOC]</p>
+<h3 id="1-&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E3A;socket&#x65B9;&#x5F0F;">1. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E3A;socket&#x65B9;&#x5F0F;</h3>
+<ul>
+<li><p>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p>```python
+def service(host, port):</p>
+<pre><code>sk = socket.socket()
+sk.bind((host, port))
+sk.listen(5)
+while True:
+    print &apos;server waiting ..........&apos;
+    # &#x7B49;&#x5F85;&#x94FE;&#x63A5;,&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x6E20;&#x9053;&#x94FE;&#x63A5; conn&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61; &#x4E13;&#x95E8;&#x7ED9;&#x5F53;&#x524D;&#x94FE;&#x63A5;&#x7684;&#x5BA2;&#x6237;&#x7AEF; addr&#x662F;ip&#x5730;&#x5740;
+    con, addr = sk.accept()
+    # &#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x6570;&#x636E;
+    client_data = con.recv(1024)
+    print str(client_data)
+    # &#x5411;&#x5BF9;&#x65B9;&#x53D1;&#x9001;&#x6570;&#x636E;
+    con.sendall(&apos;&#x4E0D;&#x8981;&#x56DE;&#x7B54;,&#x4E0D;&#x8981;&#x56DE;&#x7B54;,&#x4E0D;&#x8981;&#x56DE;&#x7B54;&apos;)
+    # con.close()
+</code></pre></li>
+</ul>
+<p>  if <strong>name</strong> == &quot;<strong>main</strong>&quot;:
+      HOST, PORT = &apos;localhost&apos;, 9991
+      service(HOST, PORT)</p>
+<pre><code>
+* &#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+  ```python
+  def client(ip):
+      sk = socket.socket()
+      sk.connect(ip)
+      time.sleep(4)
+      msg = {&apos;status&apos;: True, &apos;leave&apos;: True, &apos;msg&apos;: &apos;&#x6211;&#x4E0B;&#x7EBF;&#x4E86;&#xFF01;&apos;}
+      sk.sendall(str(msg))
+      server_reply = sk.recv(1024)
+      print str(server_reply)
+      print &apos;&#x6211;&#x4E0B;&#x7EBF;&#x4E86;&apos;
+
+  if __name__ == &apos;__main__&apos;:
+      address = (&apos;localhost&apos;, 9991)
+      client(address)
+</code></pre><h3 id="2-&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E3A;socketserver&#x65B9;&#x5F0F;">2. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E3A;SocketServer&#x65B9;&#x5F0F;</h3>
+<ul>
+<li><p>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p>```python
+class MyTcpHandler(SocketServer.BaseRequestHandler):</p>
+<pre><code>def handle(self):
+    self.data = self.request.recv(1024).strip()
+    print &apos;{} wrote:&apos;.format(self.client_address[0])
+    print self.data
+    self.request.sendall(self.data.upper())
+</code></pre></li>
+</ul>
+<p>  if <strong>name</strong> == &quot;<strong>main</strong>&quot;:
+      HOST, PORT = &quot;localhost&quot;, 9999</p>
+<pre><code>  # Create the server, binding to localhost on port 9999
+  # ThreadingTCPServer &#x652F;&#x6301;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;
+  server = SocketServer.ThreadingTCPServer((HOST, PORT), MyTcpHandler)
+  server.serve_forever()
+</code></pre><pre><code>
+* &#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+  ```python
+  def client():
+      HOST, PORT = &quot;localhost&quot;, 9999
+      data = &quot;mango &quot;
+
+      # Create a socket (SOCK_STREAM means a TCP socket)
+      sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+      try:
+          # Connect to server and send data
+          sock.connect((HOST, PORT))
+          sock.sendall(data)
+
+          # Receive data from the server and shut down
+          received = str(sock.recv(1024))
+          print received
+      finally:
+          sock.close()
+
+  if __name__ == &apos;__main__&apos;:
+      client()
+</code></pre><h2 id="python&#x4E2D;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x7F16;&#x7A0B;">python&#x4E2D;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x7F16;&#x7A0B;</h2>
+<h3 id="1-python&#x4E2D;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;">1. python&#x4E2D;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</h3>
+<h4 id="11-&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#xFF1A;">1.1 &#x76F4;&#x63A5;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#xFF1A;</h4>
+<ul>
+<li><p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">say_hi</span><span class="hljs-params">(num)</span>:</span>
+    time.sleep(random.randint(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>))
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;running on number: %s&apos;</span> % num
+    time.sleep(<span class="hljs-number">3</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-comment"># &#x751F;&#x6210;&#x7EBF;&#x7A0B;&#x5B9E;&#x4F8B; &#x5E76;&#x4E14;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;</span>
+    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>):
+        threading.Thread(target=say_hi, args=(index,)).start()
+</code></pre>
+</li>
+</ul>
+<h4 id="12-&#x901A;&#x8FC7;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;">1.2 &#x901A;&#x8FC7;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;</h4>
+<ul>
+<li><p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p>```python
+class MyThread(threading.Thread):</p>
+<pre><code>def __init__(self, num):
+    threading.Thread.__init__(self)
+    self.num = num
+
+def run(self):
+    time.sleep(random.randint(0, 3))
+    print &apos;the number is %s!&apos; % self.num
+</code></pre></li>
+</ul>
+<p>  if <strong>name</strong> == &apos;<strong>main</strong>&apos;:
+      for index in range(100):
+          MyThread(index).start()</p>
+<pre><code>
+### 2. python &#x4E2D;join
+
+* python &#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x540E;&#xFF0C;&#x4E0D;&#x7BA1;&#x4E3B;&#x7EBF;&#x7A0B;&#x662F;&#x5426;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x90FD;&#x4F1A;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x624D;&#x4E00;&#x8D77;&#x9000;&#x51FA;&#xFF0C;&#x6709;&#x65E0;join&#x7ED3;&#x679C;&#x4E00;&#x6837;
+
+* &#x5982;&#x679C;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E;&#x4E86;daemon&#x4E3A;true&#xFF0C;&#x5373;thread.setDaemon(True), &#x5219;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x81EA;&#x52A8;&#x9000;&#x51FA;&#xFF0C;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;&#x800C;&#x4E14;&#x968F;&#x7740;&#x4E3B;&#x7EBF;&#x7A0B;&#x9000;&#x51FA;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x4E5F;&#x6D88;&#x4EA1;&#x3002;
+
+* join&#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x662F;**&#x963B;&#x585E;**&#xFF0C;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#xFF0C;join&#x65B9;&#x6CD5;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;timeout&#xFF0C;&#x5373;&#x5982;&#x679C;&#x4E3B;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;timeout&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x8FD8;&#x6CA1;&#x6709;&#x7ED3;&#x675F;&#xFF0C;&#x5219;&#x4E3B;&#x7EBF;&#x7A0B;&#x5F3A;&#x5236;&#x7ED3;&#x675F;&#x5B50;&#x7EBF;&#x7A0B;&#x3002;
+
+* &#x5982;&#x679C;&#x7EBF;&#x7A0B;daemon&#x5C5E;&#x6027;&#x4E3A;False&#xFF0C; &#x5219;join&#x91CC;&#x7684;timeout&#x53C2;&#x6570;&#x65E0;&#x6548;&#x3002;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x3002;
+
+* &#x5982;&#x679C;&#x7EBF;&#x7A0B;daemon&#x5C5E;&#x6027;&#x4E3A;True&#xFF0C; &#x5219;join&#x91CC;&#x7684;timeout&#x53C2;&#x6570;&#x662F;&#x6709;&#x6548;&#x7684;&#xFF0C; &#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x7B49;&#x5F85;timeout&#x65F6;&#x95F4;&#x540E;&#xFF0C;&#x7ED3;&#x675F;&#x5B50;&#x7EBF;&#x7A0B;&#x3002;&#x6B64;&#x5904;&#x6709;&#x4E00;&#x4E2A;&#x5751;&#xFF0C;&#x5373;&#x5982;&#x679C;&#x540C;&#x65F6;&#x6709;N&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;join(timeout&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x5B9E;&#x9645;&#x4E0A;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x7B49;&#x5F85;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x6700;&#x957F;&#x4E3A; timeout&#xFF0C; &#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x8D85;&#x65F6;&#x5F00;&#x59CB;&#x65F6;&#x523B;&#x662F;&#x4E0A;&#x4E00;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x8D85;&#x65F6;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x523B;&#x3002;
+
+* &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+  ```python
+  def run(n):
+      print &apos;[%s]---------running--------\n&apos; % n
+      time.sleep(2)
+      print &apos;----done-----&apos;
+
+
+  def main():
+      for index in range(5):
+          t = threading.Thread(target=run, args=(index,))
+          t.start()
+          t.join(2)
+          print &apos;starting  thread, the name is %s&apos; % t.getName()
+
+
+  if __name__ == &apos;__main__&apos;:
+      m = threading.Thread(target=main, args=[])
+      m.setDaemon(True)  # &#x8BBE;&#x7F6E;&#x4E3A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;,&#x5B83;&#x4F5C;&#x4E3A;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x5F53;&#x4E3B;&#x7EBF;&#x7A0B;&#x9000;&#x51FA;&#x65F6;,m&#x7EBF;&#x7A0B;&#x4E5F;&#x4F1A;&#x9000;&#x51FA;, &#x7531;m&#x542F;&#x52A8;&#x7684;&#x5176;&#x5B83;&#x5B50;&#x7EBF;&#x7A0B;&#x4F1A;&#x540C;&#x65F6;&#x9000;&#x51FA;,&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x6267;&#x884C;&#x5B8C;&#x4EFB;&#x52A1;
+      m.start()
+      m.join(timeout=3)
+      print(&quot;---main thread done----&quot;)
+</code></pre><h3 id="3-&#x9501;">3. &#x9501;</h3>
+<h4 id="31-lock&#x4E92;&#x65A5;&#x9501;">3.1 Lock(&#x4E92;&#x65A5;&#x9501;)</h4>
+<ul>
+<li><p>&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_num</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">global</span> num
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;--get num:%s&apos;</span> % num
+    time.sleep(<span class="hljs-number">1</span>)
+    lock.acquire()
+    num -= <span class="hljs-number">1</span>
+    lock.release()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    num = <span class="hljs-number">101</span>
+    lock = threading.Lock()
+    thread_list = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>):
+        t = threading.Thread(target=add_num)
+        t.start()
+        thread_list.append(t)
+    <span class="hljs-keyword">for</span> tl <span class="hljs-keyword">in</span> thread_list:  <span class="hljs-comment"># &#x7B49;&#x5F85;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;</span>
+        t.join()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;final num: %s&apos;</span> % num
+</code></pre>
+</li>
+</ul>
+<h4 id="32-rlock&#x9012;&#x5F52;&#x9501;">3.2 RLock(&#x9012;&#x5F52;&#x9501;)</h4>
+<ul>
+<li><p>&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;(&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x9501;&#x4E2D;&#x8FD8;&#x8981;&#x518D;&#x5305;&#x542B;&#x5B50;&#x9501;)&#xFF1A;</p>
+<p>```python
+def run1():</p>
+<pre><code>print &apos;grab the first part data&apos;
+lock.acquire()
+global num
+num += 1
+lock.release()
+return num
+</code></pre></li>
+</ul>
+<p>  def run2():
+      print &apos;grab the second part data&apos;
+      lock.acquire()
+      global num2
+      num2 += 1
+      lock.release()
+      return num2</p>
+<p>  def run3():
+      lock.acquire()
+      res = run1()
+      print &apos;-----------between run1 and run2 ----------&apos;
+      res2 = run2()
+      lock.release()
+      print res, res2</p>
+<p>  if <strong>name</strong> == &apos;<strong>main</strong>&apos;:
+      num, num2 = 0, 0
+      lock = threading.RLock()
+      for i in range(10):
+          t = threading.Thread(target=run3)
+          t.start()
+      while threading.active_count() != 1:
+          print threading.active_count
+      else:
+          print &apos;-----all threads done-------&apos;
+          print num, num2</p>
+<pre><code>
+####  3.3 &#x4FE1;&#x53F7;&#x91CF;(Semaphore)
+
+* &#x4E92;&#x65A5;&#x9501; &#x540C;&#x65F6;&#x53EA;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x66F4;&#x6539;&#x6570;&#x636E;&#xFF0C;&#x800C;Semaphore&#x662F;&#x540C;&#x65F6;&#x5141;&#x8BB8;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x66F4;&#x6539;&#x6570;&#x636E; &#xFF0C;&#x6BD4;&#x5982;&#x5395;&#x6240;&#x6709;3&#x4E2A;&#x5751;&#xFF0C;&#x90A3;&#x6700;&#x591A;&#x53EA;&#x5141;&#x8BB8;3&#x4E2A;&#x4EBA;&#x4E0A;&#x5395;&#x6240;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4EBA;&#x53EA;&#x80FD;&#x7B49;&#x91CC;&#x9762;&#x6709;&#x4EBA;&#x51FA;&#x6765;&#x4E86;&#x624D;&#x80FD;&#x518D;&#x8FDB;&#x53BB;&#x3002;(&#x540C;&#x65F6;&#x5BF9;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4FEE;&#x8BE5;&#x6570;&#x636E;&#x4E0D;&#x51C6;&#x786E;)
+
+* &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+  ```python
+  # -*- coding: utf-8 -*-
+  # &#x4FE1;&#x53F7;&#x91CF;
+  # &#x4E92;&#x65A5;&#x9501; &#x540C;&#x65F6;&#x53EA;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x66F4;&#x6539;&#x6570;&#x636E;&#xFF0C;&#x800C;Semaphore&#x662F;&#x540C;&#x65F6;&#x5141;&#x8BB8;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x66F4;&#x6539;&#x6570;&#x636E; &#xFF0C;
+  # &#x6BD4;&#x5982;&#x5395;&#x6240;&#x6709;3&#x4E2A;&#x5751;&#xFF0C;&#x90A3;&#x6700;&#x591A;&#x53EA;&#x5141;&#x8BB8;3&#x4E2A;&#x4EBA;&#x4E0A;&#x5395;&#x6240;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4EBA;&#x53EA;&#x80FD;&#x7B49;&#x91CC;&#x9762;&#x6709;&#x4EBA;&#x51FA;&#x6765;&#x4E86;&#x624D;&#x80FD;&#x518D;&#x8FDB;&#x53BB;&#x3002;
+  import threading
+  import time
+
+
+  def run(n):
+      semaphore.acquire()
+      time.sleep(1)
+      print &apos;run the thread: %s \n&apos; % n
+      semaphore.release()
+
+
+  if __name__ == &apos;__main__&apos;:
+      num = 0
+      # &#x6700;&#x591A;&#x5141;&#x8BB8;5&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x8FD0;&#x884C;
+      semaphore = threading.BoundedSemaphore(5)
+      for i in range(20):
+          t = threading.Thread(target=run, args=(i,))
+          t.start()
+      while threading.active_count() != 1:
+          pass  # print threading.active_count()
+      else:
+          print(&apos;----all threads done---&apos;)
+          print(num)
+</code></pre><h4 id="34-&#x591A;&#x7EBF;&#x7A0B;&#x4EA4;&#x4E92;event">3.4 &#x591A;&#x7EBF;&#x7A0B;&#x4EA4;&#x4E92;(Event)</h4>
+<ul>
+<li><p>&#x5728;python&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;threading.Event&#x9ED8;&#x8BA4;&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#xFF0C;&#x521D;&#x59CB;&#x503C;&#x4E3A;False&#xFF0C;&#x8BE5;&#x7EBF;&#x7A0B;&#x901A;&#x8FC7;wait()&#x65B9;&#x6CD5;&#x6216;&#x8005;clear()&#x65B9;&#x6CD5;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x76F4;&#x5230;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x8BE5;Event&#x7684;set()&#x65B9;&#x6CD5;&#x5C06;&#x5185;&#x7F6E;&#x6807;&#x8BC6;&#x8BBE;&#x7F6E;&#x4E3A;True&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BE5;Event&#x4F1A;&#x901A;&#x77E5;&#x6240;&#x6709;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6062;&#x590D;&#x8FD0;&#x884C;&#x3002;</p>
+</li>
+<li><p>&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x6A21;&#x62DF;&#x7EA2;&#x7EFF;&#x706F;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>```python</p>
+<h1 id="--coding-utf-8---">-<em>- coding: utf-8 -</em>-</h1>
+<h1 id="&#x901A;&#x8FC7;event&#x6765;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;-&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x7EA2;&#x7EFF;&#x706F;&#x7684;&#x4F8B;&#x5B50;">&#x901A;&#x8FC7;Event&#x6765;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x4EA4;&#x4E92; &#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x7EA2;&#x7EFF;&#x706F;&#x7684;&#x4F8B;&#x5B50;</h1>
+<p>import random
+import threading</p>
+<p>import time</p>
+</li>
+</ul>
+<p>  def light():
+      if not event.isSet():
+          event.set()
+      count = 0
+      while True:
+          if count &lt; 10:
+              print &apos;\033[42;1m--green light on---\033[0m&apos;
+          elif count &lt; 13:
+              print &apos;\033[43;1m--yellow light on---\033[0m&apos;
+          elif count &lt; 20:
+              if event.isSet():
+                  event.clear()  # &#x7EE7;&#x7EED;&#x963B;&#x585E;
+              print &apos;\033[41;1m--red light on---\033[0m&apos;
+          else:
+              count = 0
+              event.set()  # &#x5524;&#x9192;&#x6240;&#x6709;&#x7684;event&#xFF0C; &#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;
+          time.sleep(1)
+          count += 1</p>
+<p>  def car(n):
+      while True:
+          time.sleep(random.randrange(10))
+          if event.isSet():  # &#x7EFF;&#x706F;
+              print &quot;car [%s] is running..&quot; % n
+          else:
+              print &quot;car [%s] is waiting for the red light..&quot; % n</p>
+<p>  if <strong>name</strong> == &apos;<strong>main</strong>&apos;:
+      event = threading.Event()
+      light = threading.Thread(target=light)
+      light.start()
+      for i in range(4):
+          threading.Thread(target=car, args=(i,)).start()
+  ```</p>
+<p>  &#x200B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="python_error.html" class="navigation navigation-prev " aria-label="Previous page: 4.1.6、python错误解决">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../django/readme.html" class="navigation navigation-next " aria-label="Next page: 4.2、Django框架">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.1.7、python网络编程和多线程","level":"1.5.1.7","depth":3,"next":{"title":"4.2、Django框架","level":"1.5.2","depth":2,"path":"python/django/readme.md","ref":"./python/django/readme.md","articles":[{"title":"4.2.1 Django项目的创建","level":"1.5.2.1","depth":3,"path":"python/django/django_create.md","ref":"./python/django/django_create.md","articles":[]},{"title":"4.2.2 Django配置用户拦截请求","level":"1.5.2.2","depth":3,"path":"python/django/django_user.md","ref":"./python/django/django_user.md","articles":[]},{"title":"4.2.3 Django源码解读","level":"1.5.2.3","depth":3,"path":"python/django/django_code.md","ref":"./python/django/django_code.md","articles":[]},{"title":"4.2.4 Django遇到的问题","level":"1.5.2.4","depth":3,"path":"python/django/django_error.md","ref":"./python/django/django_error.md","articles":[]}]},"previous":{"title":"4.1.6、python错误解决","level":"1.5.1.6","depth":3,"path":"python/basic/python_error.md","ref":"./python/basic/python_error.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["splitter","-search","search-pro","toggle-chapters"],"pluginsConfig":{"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"splitter":{},"toggle-chapters":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/basic/python_network.md","mtime":"2018-03-17T14:46:14.203Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-30T16:20:25.475Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
