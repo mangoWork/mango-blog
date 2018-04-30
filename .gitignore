@@ -2,3 +2,5 @@
 *.iml
 */pom.xml
 pom.xml
+node_moudles/
+_book/*
