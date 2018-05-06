@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 dai_base=/home/dlm/work/mango-blog
 flag_path=${dai_base}/mango-blog-dai/version
