@@ -4,3 +4,6 @@
 pom.xml
 node_moudles/
 _book/*
+pom.xml
+*/node_moudles/
+*/_book/*

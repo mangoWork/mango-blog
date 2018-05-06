@@ -1,0 +1,3 @@
+crontab<<EOF
+*/3 * * * * /home/dlm/work/mango-blog/gitbook-execute.sh
+EOF
