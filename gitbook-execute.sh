@@ -6,6 +6,7 @@ dai_v_base=/home/dlm/.dai
 version_path=${dai_v_base}/v_md5
 gitbook_v_path=${dai_v_base}/g_md5
 version=$(cat ${flag_path})
+cd $dai_base
 git fetch --all
 git reset --hard origin/gitbook-dai
 
