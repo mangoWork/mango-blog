@@ -2,16 +2,30 @@
 
 dai_base=/home/dlm/work/mango-blog
 flag_path=${dai_base}/mango-blog-dai/version
-version_path=/home/dlm/.dai/v_md5
-gitbook_v_path=/home/dlm/.dai/g_md5
+dai_v_base=/home/dlm/.dai
+version_path=${dai_v_base}/v_md5
+gitbook_v_path=${dai_v_base}/g_md5
 version=$(cat ${flag_path})
-
 git fetch --all
 git reset --hard origin/gitbook-dai
 
-if [ ! -d $version_path ]; then
+if [ ! -d $dai_v_base ]; then
     mkdir -p ${version_path}
 fi 
+
+if [ -d $version_path ]; then
+    rm -rf $version_path
+elif [ ! -f $version_path ]; then
+    touch $version_path
+    flag=1
+fi
+
+if [ -d $gitbook_v_path ]; then
+    rm -rf $gitbook_v_path
+elif [ ! -f $gitbook_v_path ]; then
+    touch $gitbook_v_path
+fi
+
 
 
 
@@ -19,12 +33,12 @@ fi
 # $2 存放文件md5值，用于判断文件是否更改
 # $3 可选文件更新后，需要执行的命令（用'service nginx restart' 用单引号包起来）
 # $1 标识创建的文件，$2标识md5存放目录
-function createMD5(){
+function creatMd5file(){
      md5sum -b $1 > $2
-     # 判断文件是否存在
 }
 
 function get_change(){    
+
     if [ ! $2 ]; then
         creatMd5file $1 $2
         return 1
@@ -39,8 +53,10 @@ function get_change(){
     return 0
 }
 
-v_flag=get_change ${flag_path} ${version_path}
-g_flag=get_change ${dai_base}/mango-blog-dai/book.json ${gitbook_v_path}
+get_change ${flag_path} ${version_path}
+v_flag=$?
+get_change ${dai_base}/mango-blog-dai/book.json ${gitbook_v_path}
+g_flag=$?
 
 cd ${dai_base}/mango-blog-dai
  
