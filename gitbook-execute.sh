@@ -24,7 +24,7 @@ function createMD5(){
      # 判断文件是否存在
 }
 
-function compare_change(){    
+function get_change(){    
     if [ ! $2 ]; then
         creatMd5file $1 $2
         return 1
@@ -39,16 +39,16 @@ function compare_change(){
     return 0
 }
 
-v_flag=compare_change ${flag_path} ${version_path}
-g_flag=compare_change ${dai_base}/mango-blog-dai/book.json ${gitbook_v_path}
+v_flag=get_change ${flag_path} ${version_path}
+g_flag=get_change ${dai_base}/mango-blog-dai/book.json ${gitbook_v_path}
 
 cd ${dai_base}/mango-blog-dai
  
-if [ $g_flag -gt 0 ]; then        
+if [[ $g_flag -gt 0 ]]; then        
     gitbook install
 fi
 
-if [ $v_flag -gt 0 ]; then    
+if [[ $v_flag -gt 0 ]]; then    
     gitbook build  --output=${dai_base}/mango-blog-dai
 fi
 
